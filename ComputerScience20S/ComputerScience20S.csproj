@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B022DACB-6EDC-4222-84E2-C29E3DF27C9D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ComputerScience20S</RootNamespace>
+    <AssemblyName>ComputerScience20S</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdvancedGameObject.cs" />
+    <Compile Include="frmAdvancedProgrammingExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdvancedProgrammingExtra.designer.cs">
+      <DependentUpon>frmAdvancedProgrammingExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConditionalStatementsExample1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConditionalStatementsExample1.Designer.cs">
+      <DependentUpon>frmConditionalStatementsExample1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConditionalStatementsExample2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConditionalStatementsExample2.designer.cs">
+      <DependentUpon>frmConditionalStatementsExample2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIntroductionToProgrammingExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIntroductionToProgrammingExample.designer.cs">
+      <DependentUpon>frmIntroductionToProgrammingExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoopingExample1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoopingExample1.designer.cs">
+      <DependentUpon>frmLoopingExample1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoopingExample2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoopingExample2.designer.cs">
+      <DependentUpon>frmLoopingExample2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form1.designer.cs">
+      <DependentUpon>frmProgrammingExtras1Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form2.designer.cs">
+      <DependentUpon>frmProgrammingExtras1Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras1Form3.designer.cs">
+      <DependentUpon>frmProgrammingExtras1Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras2.designer.cs">
+      <DependentUpon>frmProgrammingExtras2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras3.designer.cs">
+      <DependentUpon>frmProgrammingExtras3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgrammingExtras4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgrammingExtras4.designer.cs">
+      <DependentUpon>frmProgrammingExtras4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVariablesExample1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVariablesExample1.Designer.cs">
+      <DependentUpon>frmVariablesExample1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVariablesExample2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVariablesExample2.Designer.cs">
+      <DependentUpon>frmVariablesExample2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdvancedProgrammingExtra.resx">
+      <DependentUpon>frmAdvancedProgrammingExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConditionalStatementsExample1.resx">
+      <DependentUpon>frmConditionalStatementsExample1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConditionalStatementsExample2.resx">
+      <DependentUpon>frmConditionalStatementsExample2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntroductionToProgrammingExample.resx">
+      <DependentUpon>frmIntroductionToProgrammingExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoopingExample1.resx">
+      <DependentUpon>frmLoopingExample1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoopingExample2.resx">
+      <DependentUpon>frmLoopingExample2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras1Form1.resx">
+      <DependentUpon>frmProgrammingExtras1Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras1Form2.resx">
+      <DependentUpon>frmProgrammingExtras1Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras1Form3.resx">
+      <DependentUpon>frmProgrammingExtras1Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras2.resx">
+      <DependentUpon>frmProgrammingExtras2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras3.resx">
+      <DependentUpon>frmProgrammingExtras3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgrammingExtras4.resx">
+      <DependentUpon>frmProgrammingExtras4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVariablesExample1.resx">
+      <DependentUpon>frmVariablesExample1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVariablesExample2.resx">
+      <DependentUpon>frmVariablesExample2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_5Dfdk1Y_lrlzng7pECGglg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pacman.ico" />
+    <None Include="Resources\death.wav" />
+    <None Include="Resources\chomp.wav" />
+    <None Include="Resources\beginning.wav" />
+    <None Include="Resources\pacmanRight.gif" />
+    <None Include="Resources\pacmanResting.gif" />
+    <None Include="Resources\pacmanLeft.gif" />
+    <None Include="Resources\pacmanDown.gif" />
+    <None Include="Resources\Pac-man1.png" />
+    <None Include="Resources\Pac-man.png" />
+    <None Include="Resources\InkyOpen.gif" />
+    <None Include="Resources\InkyClosed.gif" />
+    <None Include="Resources\ClydeOpen.gif" />
+    <None Include="Resources\ClydeClosed.gif" />
+    <None Include="Resources\BlinkyOpen.gif" />
+    <None Include="Resources\BlinkyClosed.gif" />
+    <None Include="Resources\PinkyOpen.gif" />
+    <None Include="Resources\PinkyClosed.gif" />
+    <None Include="Resources\pacmanUp.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
