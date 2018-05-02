@@ -6,17 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/// <summary>
+/// This represents a ghost in the game of Pacman
+/// </summary>
 namespace ComputerScience20S
 {
     class Ghost : LivingGameObject
     {
-        // Global Constants across all forms for movement amounts:
-        public const int GHOST_AMOUNT = 7;
 
-        public const int BLINKY = 0;
-        public const int INKY   = 1;
-        public const int PINKY  = 2;
-        public const int CLYDE  = 3;
+        /// <summary>
+        /// The amount a ghost moves
+        /// </summary>
+        private const int GHOST_AMOUNT = 7;
+        /// <summary>
+        /// The 4 types of ghosts
+        /// </summary>
+        private const int BLINKY = 0;
+        private const int INKY   = 1;
+        private const int PINKY  = 2;
+        private const int CLYDE  = 3;
 
         private Pacman pacman;
         private Wall[] walls;
