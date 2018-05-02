@@ -24,19 +24,15 @@ namespace ComputerScience20S
         const int DOTS = 245;
         
         // global "arrays" of picture boxes for the ghosts, walls, and dots
-        PictureBox[] ghostImages = new PictureBox[GHOSTS];
-        PictureBox[] wallImages  = new PictureBox[WALLS];
-        PictureBox[] dotImages   = new PictureBox[DOTS];
+        PictureBox[] ghostImages;
+        PictureBox[] wallImages;
+        PictureBox[] dotImages;
         
         // global "GameObject" class objects for the game elements
-        AdvancedGameObject   pacman = new AdvancedGameObject();
-        AdvancedGameObject[] dots   = new AdvancedGameObject[DOTS];
-        AdvancedGameObject[] ghosts = new AdvancedGameObject[GHOSTS];
-        AdvancedGameObject[] walls  = new AdvancedGameObject[WALLS];
-
-        // flag variables to track animation state
-        bool isMouthOpen = false;
-        bool isGhostOpen = false;
+        Pacman  pacman;
+        Ghost[] ghosts;
+        Dot[]   dots;        
+        Wall[]  walls;
 
         // sound playing object
         SoundPlayer player;
@@ -48,200 +44,47 @@ namespace ComputerScience20S
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // start the introduction timer and turn off all other timers
-            tmrIntro.Enabled = true;
-            tmrChomp.Enabled = false;
-            tmrDeath.Enabled = false;
-            tmrGhosts.Enabled = false;
-            tmrPacman.Enabled = false;
-            tmrPacmanAnimate.Enabled = false;
-            tmrGhostAnimate.Enabled = false;
-
-            // play the intro sound
-            player = new SoundPlayer(Properties.Resources.beginning);
-            player.Play();
-
-            // call a "method, function, procedure" that sets up the arrays:
+            // calling "methods, functions, procedures" that sets things up
+            setSoundsAndTimers();
             setUpArrays();
-            
-            // put the coordinates into the pacman object
-            pacman.getCoordinates(picPacman);
-
-            // loop through all the walls and assign coordinates to each wall object
-            for (int i = 0; i < WALLS; i++)
-            {
-                walls[i] = new AdvancedGameObject();
-                walls[i].getCoordinates(wallImages[i]);
-                // also make each wall picture box invisible (but there)
-                wallImages[i].Visible = false;
-            }
-            
-            // loop through all the dots and assign coordinates to each dot object
-            for (int i = 0; i < DOTS; i++)
-            {
-                dots[i] = new AdvancedGameObject();
-                dots[i].getCoordinates(dotImages[i]);
-            }
-
-            // loop through all the ghosts and assign coordinates to each ghost object
-            // as well as assigning a random direction to each
-            Random random = new Random();
-            for (int i = 0; i < GHOSTS; i++)
-            {
-                ghosts[i] = new AdvancedGameObject();
-                ghosts[i].getCoordinates(ghostImages[i]);
-                ghosts[i].direction = random.Next(1, 5);
-            }
+            setUpGameObjects();
         }
-
+        
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            // get keyboard code and check against the Globals class values:
-            if      (e.KeyValue == Globals.KEY_END)   this.Close();
-            else if (e.KeyValue == Globals.KEY_DOWN)  pacman.direction = Globals.MOVE_DOWN;
-            else if (e.KeyValue == Globals.KEY_UP)    pacman.direction = Globals.MOVE_UP;
-            else if (e.KeyValue == Globals.KEY_LEFT)  pacman.direction = Globals.MOVE_LEFT;
-            else if (e.KeyValue == Globals.KEY_RIGHT) pacman.direction = Globals.MOVE_RIGHT;
+            pacman.keyPress(this, e);
         }
 
         private void tmrPacman_Tick(object sender, EventArgs e)
         {
-            // update the coordaintes of where pacman currently is
-            pacman.updateCoordinates();
-
-            // now move those coordinates an amount
-            pacman.move(Globals.PACMAN_AMOUNT);
-
-            // loop through all dots and check for collision
-            for (int i = 0; i < DOTS; i++)
-            {
-                // if collision has occured, and dot is not already invisible, make invisible
-                if (dotImages[i].Visible == true)
-                {
-                    if (pacman.isColliding(dots[i]))
-                    {
-                        dotImages[i].Visible = false;
-                    }
-                }
-            }
-
-            // loop through all walls and check for collision
-            for (int i = 0; i < WALLS; i++)
-            {
-                // if collision has occured, stick pacman to that wall
-                if (pacman.isColliding(walls[i]))
-                {
-                    pacman.stickTo(walls[i]);
-                }
-            }
-            
-            // now redraw pacman in his final position
-            picPacman.Top = pacman.top;
-            picPacman.Left = pacman.left;
+            pacman.action();
         }
 
         private void tmrGhosts_Tick(object sender, EventArgs e)
         {
             // loop through all ghosts
-            for (int i = 0; i < GHOSTS; i++)
+            for (int i = 0; i < ghosts.Length; i++)
             {
-                // update the coordaintes of where this ghost currently is
-                ghosts[i].updateCoordinates();
-
-                // now move this ghost's coordinates an amount
-                ghosts[i].move(Globals.GHOST_AMOUNT);
-
-                // loop through all walls and check for collision
-                for (int j = 0; j < WALLS; j++)
+                bool hitPacman = ghosts[i].action();
+                if (hitPacman)
                 {
-                    // if collision has occured, bounce this ghost off that wall
-                    if (ghosts[i].isColliding(walls[j]))
-                    {
-                        ghosts[i].bounceOff(walls[j]);
-                    }
+                    loseLife();
+                    return;
                 }
-
-                // check for collision with pacman, if occurs stop the game
-                if (ghosts[i].isColliding(pacman))
-                {
-                    // stop all game timers
-                    tmrPacmanAnimate.Enabled = false;
-                    tmrGhosts.Enabled = false;
-                    tmrPacman.Enabled = false;
-                    tmrGhostAnimate.Enabled = false;
-
-                    // play the death sound
-                    player.Stop();
-                    player = new SoundPlayer(Properties.Resources.death);
-                    player.PlayLooping();
-
-                    // start the death delay timer
-                    tmrDeath.Enabled = true;
-                }
-
-                // now redraw this ghost in his final position
-                ghostImages[i].Top = ghosts[i].top;
-                ghostImages[i].Left = ghosts[i].left;
             }
         }
                 
         private void tmrPacmanAnimate_Tick(object sender, EventArgs e)
         {
-            // every tick of the timer
-            if (isMouthOpen == true)
-            {
-                // mouth should be set to be closed (it was open)
-                // change the image and set the flag to closed
-                picPacman.Image = Resources.pacmanResting;
-                isMouthOpen = false;
-            }
-            else if (isMouthOpen == false)
-            {
-                // mouth should be set to be open (it was closed)
-                // change the image and set the flag to closed
-                // but set the image based on the direction
-                if (pacman.direction == Globals.MOVE_LEFT)
-                {
-                    picPacman.Image = Resources.pacmanLeft;
-                }
-                else if (pacman.direction == Globals.MOVE_RIGHT)
-                {
-                    picPacman.Image = Resources.pacmanRight;
-                }
-                else if (pacman.direction == Globals.MOVE_UP)
-                {
-                    picPacman.Image = Resources.pacmanUp;
-                }
-                else if (pacman.direction == Globals.MOVE_DOWN)
-                {
-                    picPacman.Image = Resources.pacmanDown;
-                }
-                isMouthOpen = true;
-            }
+            pacman.animate();
         }
                 
         private void tmrGhostAnimate_Tick(object sender, EventArgs e)
         {
-            // every tick of the timer
-            if (isGhostOpen == true)
+            // loop through all ghosts
+            for (int i = 0; i < ghosts.Length; i++)
             {
-                // mouth should be set to be closed (it was open)
-                // change the image and set the flag to closed
-                ghostImages[0].Image = Resources.BlinkyClosed;
-                ghostImages[1].Image = Resources.InkyClosed;
-                ghostImages[2].Image = Resources.PinkyClosed;
-                ghostImages[3].Image = Resources.ClydeClosed;
-                isGhostOpen = false;
-            }
-            else if (isGhostOpen == false)
-            {
-                // mouth should be set to be open (it was closed)
-                // change the image and set the flag to closed
-                ghostImages[0].Image = Resources.BlinkyOpen;
-                ghostImages[1].Image = Resources.InkyOpen;
-                ghostImages[2].Image = Resources.PinkyOpen;
-                ghostImages[3].Image = Resources.ClydeOpen;
-                isGhostOpen = true;
+                ghosts[i].animate();
             }
         }
 
@@ -275,9 +118,79 @@ namespace ComputerScience20S
             player = new SoundPlayer(Properties.Resources.chomp);
             player.PlayLooping();
         }
-        
+
+        private void loseLife()
+        {
+            // stop all game timers
+            tmrPacmanAnimate.Enabled = false;
+            tmrGhosts.Enabled = false;
+            tmrPacman.Enabled = false;
+            tmrGhostAnimate.Enabled = false;
+
+            // play the death sound
+            player.Stop();
+            player = new SoundPlayer(Properties.Resources.death);
+            player.PlayLooping();
+
+            // start the death delay timer
+            tmrDeath.Enabled = true;
+        }
+
+        private void setSoundsAndTimers()
+        {
+            // start the introduction timer and turn off all other timers
+            tmrIntro.Enabled = true;
+            tmrChomp.Enabled = false;
+            tmrDeath.Enabled = false;
+            tmrGhosts.Enabled = false;
+            tmrPacman.Enabled = false;
+            tmrPacmanAnimate.Enabled = false;
+            tmrGhostAnimate.Enabled = false;
+
+            // play the intro sound
+            player = new SoundPlayer(Properties.Resources.beginning);
+            player.Play();
+        }
+
+        private void setUpGameObjects()
+        {
+            // put the coordinates into the pacman object
+            pacman = new Pacman(picPacman);
+
+            // loop through all the walls and assign coordinates to each wall object
+            walls = new Wall[WALLS];
+            for (int i = 0; i < WALLS; i++)
+            {
+                walls[i] = new Wall(wallImages[i]);
+            }
+
+            // loop through all the dots and assign coordinates to each dot object
+            dots = new Dot[DOTS];
+            for (int i = 0; i < DOTS; i++)
+            {
+                dots[i] = new Dot(dotImages[i]);
+            }
+
+            // loop through all the ghosts and assign coordinates to each ghost object
+            // as well as assigning a random direction to each
+            ghosts = new Ghost[GHOSTS];
+            for (int i = 0; i < GHOSTS; i++)
+            {
+                ghosts[i] = new Ghost(ghostImages[i],i);
+                ghosts[i].assign(walls);
+                ghosts[i].assign(pacman);
+            }
+
+            pacman.assign(dots);
+            pacman.assign(walls);
+        }
+
         private void setUpArrays()
         {
+            ghostImages = new PictureBox[GHOSTS];
+            wallImages  = new PictureBox[WALLS];
+            dotImages   = new PictureBox[DOTS];
+
             // put all the ghost images into the ghost image array:
             ghostImages[0] = picBlinky;
             ghostImages[1] = picInky;
