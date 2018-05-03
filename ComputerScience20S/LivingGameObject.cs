@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/// <summary>
+/// This represents a 'living' game character
+/// </summary>
 namespace ComputerScience20S
 {
     class LivingGameObject : SimpleGameObject

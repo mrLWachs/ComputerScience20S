@@ -15,18 +15,12 @@ namespace ComputerScience20S
     {
 
         /// <summary>
-        /// The image associated with this dot property
-        /// </summary>
-        private PictureBox image;
-
-        /// <summary>
         /// Constructor sets class properties
         /// </summary>
-        /// <param name="image">the image to associate with the property</param>
-        public Dot(PictureBox image)
+        /// <param name="hitbox">the image to associate with the property</param>
+        public Dot(PictureBox hitbox)
         {
-            base.getCoordinates(image);
-            this.image = image;
+            base.getCoordinates(hitbox);
         }
 
         /// <summary>
@@ -34,7 +28,7 @@ namespace ComputerScience20S
         /// </summary>
         public void getEaten()
         {
-            image.Visible = false;
+            base.hitbox.Visible = false;
         }
 
         /// <summary>
@@ -43,7 +37,7 @@ namespace ComputerScience20S
         /// <returns>dot is in game (true), or not (false)</returns>
         public bool isAlive()
         {
-            return image.Visible;
+            return base.hitbox.Visible;
         }
 
     }

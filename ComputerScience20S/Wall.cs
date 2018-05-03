@@ -5,15 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/// <summary>
+/// This represents a wall in the game of Pacman
+/// </summary>
 namespace ComputerScience20S
 {
     class Wall : SimpleGameObject
     {
 
-        public Wall(PictureBox image)
+        /// <summary>
+        /// Constructor sets class properties
+        /// </summary>
+        /// <param name="hitbox">the image to associate with the property</param>
+        public Wall(PictureBox hitbox)
         {
-            base.getCoordinates(image);
-            image.Visible = false;
+            base.getCoordinates(hitbox);
+            base.hitbox.Visible = false;
         }
 
     }

@@ -18,11 +18,6 @@ namespace ComputerScience20S
     public partial class frmAdvancedProgrammingExtra : Form
     {
 
-        // global constants for the total number of ghosts, wall, and dots
-        const int GHOSTS = 4;
-        const int WALLS = 44;
-        const int DOTS = 245;
-        
         // global "arrays" of picture boxes for the ghosts, walls, and dots
         PictureBox[] ghostImages;
         PictureBox[] wallImages;
@@ -158,23 +153,23 @@ namespace ComputerScience20S
             pacman = new Pacman(picPacman);
 
             // loop through all the walls and assign coordinates to each wall object
-            walls = new Wall[WALLS];
-            for (int i = 0; i < WALLS; i++)
+            walls = new Wall[PacmanGlobals.WALLS];
+            for (int i = 0; i < walls.Length; i++)
             {
                 walls[i] = new Wall(wallImages[i]);
             }
 
             // loop through all the dots and assign coordinates to each dot object
-            dots = new Dot[DOTS];
-            for (int i = 0; i < DOTS; i++)
+            dots = new Dot[PacmanGlobals.DOTS];
+            for (int i = 0; i < dots.Length; i++)
             {
                 dots[i] = new Dot(dotImages[i]);
             }
 
             // loop through all the ghosts and assign coordinates to each ghost object
             // as well as assigning a random direction to each
-            ghosts = new Ghost[GHOSTS];
-            for (int i = 0; i < GHOSTS; i++)
+            ghosts = new Ghost[PacmanGlobals.GHOSTS];
+            for (int i = 0; i < ghosts.Length; i++)
             {
                 ghosts[i] = new Ghost(ghostImages[i],i);
                 ghosts[i].assign(walls);
@@ -187,9 +182,9 @@ namespace ComputerScience20S
 
         private void setUpArrays()
         {
-            ghostImages = new PictureBox[GHOSTS];
-            wallImages  = new PictureBox[WALLS];
-            dotImages   = new PictureBox[DOTS];
+            ghostImages = new PictureBox[PacmanGlobals.GHOSTS];
+            wallImages  = new PictureBox[PacmanGlobals.WALLS];
+            dotImages   = new PictureBox[PacmanGlobals.DOTS];
 
             // put all the ghost images into the ghost image array:
             ghostImages[0] = picBlinky;

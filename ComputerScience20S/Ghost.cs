@@ -14,52 +14,73 @@ namespace ComputerScience20S
 {
     class Ghost : LivingGameObject
     {
-
+        
         /// <summary>
-        /// The amount a ghost moves
+        /// Association with a pacman object
         /// </summary>
-        private const int GHOST_AMOUNT = 7;
-        /// <summary>
-        /// The 4 types of ghosts
-        /// </summary>
-        private const int BLINKY = 0;
-        private const int INKY   = 1;
-        private const int PINKY  = 2;
-        private const int CLYDE  = 3;
-
         private Pacman pacman;
+
+        /// <summary>
+        /// Association with the wall objects
+        /// </summary>
         private Wall[] walls;
 
+        /// <summary>
+        /// the type of ghost this object is
+        /// </summary>
         private int ghostType;
 
-        // flag variables to track animation state
+        /// <summary>
+        /// flag variables to track animation state
+        /// </summary>
         private bool isOpen = false;
 
 
+        /// <summary>
+        /// Constructor sets class properties
+        /// </summary>
+        /// <param name="hitbox">the image to associate with the property</param>
+        /// <param name="ghostType">whihc type of ghost this is</param>
         public Ghost(PictureBox hitbox, int ghostType)
         {
             base.getCoordinates(hitbox);
+
+            // start the ghost in a random direction
             base.direction = base.randomDirection();
+
+            // set the type of ghost
             this.ghostType = ghostType;
         }
 
+        /// <summary>
+        /// Associates this ghost with the wall objects
+        /// </summary>
+        /// <param name="walls">the wall objects to associate with</param>
         public void assign(Wall[] walls)
         {
             this.walls = walls;
         }
 
+        /// <summary>
+        /// Associates this ghost with the pacman object
+        /// </summary>
+        /// <param name="pacman">the pacman object to associate with</param>
         public void assign(Pacman pacman)
         {
             this.pacman = pacman;
         }
 
+        /// <summary>
+        /// The action for this ghost
+        /// </summary>
+        /// <returns>If the ghost hits pacman (true), or not (false)</returns>
         public bool action()
         {
             // update the coordaintes of where this ghost currently is
             updateCoordinates();
 
             // now move this ghost's coordinates an amount
-            move(GHOST_AMOUNT);
+            move(PacmanGlobals.GHOST_AMOUNT);
 
             // loop through all walls and check for collision
             for (int j = 0; j < walls.Length; j++)
@@ -77,9 +98,11 @@ namespace ComputerScience20S
 
             // check for collision with pacman, if occurs stop the game
             return isColliding(pacman);
-
         }
 
+        /// <summary>
+        /// The visual animation for this ghost
+        /// </summary>
         public void animate()
         {
             // every tick of the timer
@@ -87,20 +110,20 @@ namespace ComputerScience20S
             {
                 // mouth should be set to be closed (it was open)
                 // change the image and set the flag to closed
-                if      (ghostType == BLINKY) hitbox.Image = Resources.BlinkyClosed;
-                else if (ghostType == INKY)   hitbox.Image = Resources.InkyClosed;
-                else if (ghostType == PINKY)  hitbox.Image = Resources.PinkyClosed;
-                else if (ghostType == CLYDE)  hitbox.Image = Resources.ClydeClosed;
+                if      (ghostType == PacmanGlobals.BLINKY) hitbox.Image = Resources.BlinkyClosed;
+                else if (ghostType == PacmanGlobals.INKY)   hitbox.Image = Resources.InkyClosed;
+                else if (ghostType == PacmanGlobals.PINKY)  hitbox.Image = Resources.PinkyClosed;
+                else if (ghostType == PacmanGlobals.CLYDE)  hitbox.Image = Resources.ClydeClosed;
                 isOpen = false;
             }
             else if (isOpen == false)
             {
                 // mouth should be set to be open (it was closed)
                 // change the image and set the flag to closed
-                if      (ghostType == BLINKY) hitbox.Image = Resources.BlinkyOpen;
-                else if (ghostType == INKY)   hitbox.Image = Resources.InkyOpen;
-                else if (ghostType == PINKY)  hitbox.Image = Resources.PinkyOpen;
-                else if (ghostType == CLYDE)  hitbox.Image = Resources.ClydeOpen;
+                if      (ghostType == PacmanGlobals.BLINKY) hitbox.Image = Resources.BlinkyOpen;
+                else if (ghostType == PacmanGlobals.INKY)   hitbox.Image = Resources.InkyOpen;
+                else if (ghostType == PacmanGlobals.PINKY)  hitbox.Image = Resources.PinkyOpen;
+                else if (ghostType == PacmanGlobals.CLYDE)  hitbox.Image = Resources.ClydeOpen;
                 isOpen = true;
             }
         }

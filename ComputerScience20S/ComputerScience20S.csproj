@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Ghost.cs" />
     <Compile Include="LivingGameObject.cs" />
+    <Compile Include="PacmanGlobals.cs" />
     <Compile Include="SimpleGameObject.cs" />
     <Compile Include="Dot.cs" />
     <Compile Include="frmAdvancedProgrammingExtra.cs">
