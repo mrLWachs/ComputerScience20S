@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directions.cs" />
     <Compile Include="frmAdvancedProgrammingExtras2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +55,7 @@
     <Compile Include="Ghost.cs" />
     <Compile Include="LivingGameObject.cs" />
     <Compile Include="PacmanGlobals.cs" />
+    <Compile Include="ShooterGameObject.cs" />
     <Compile Include="SimpleGameObject.cs" />
     <Compile Include="Dot.cs" />
     <Compile Include="frmAdvancedProgrammingExtras1.cs">
@@ -155,6 +157,9 @@
     <EmbeddedResource Include="frmAdvancedProgrammingExtras1.resx">
       <DependentUpon>frmAdvancedProgrammingExtras1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdvancedProgrammingExtras2.resx">
+      <DependentUpon>frmAdvancedProgrammingExtras2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConditionalStatementsExample1.resx">
       <DependentUpon>frmConditionalStatementsExample1.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +249,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pacman.ico" />
+    <None Include="Resources\heroBulletSound.wav" />
+    <None Include="Resources\enemyBulletSound.wav" />
+    <None Include="Resources\enemyBullet.gif" />
+    <None Include="Resources\heroBullet.gif" />
+    <None Include="Resources\spaceship.png" />
+    <None Include="Resources\planet.png" />
+    <None Include="Resources\spaceMonster.png" />
+    <None Include="Resources\planetExplosion.wav" />
+    <None Include="Resources\key.wav" />
+    <None Include="Resources\heroBullet.wav" />
+    <None Include="Resources\enemyExplosion.wav" />
+    <None Include="Resources\enemyBullet.wav" />
     <None Include="Resources\death.wav" />
     <None Include="Resources\chomp.wav" />
     <None Include="Resources\beginning.wav" />

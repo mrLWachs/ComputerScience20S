@@ -30,7 +30,7 @@
         {
             this.btnRun = new System.Windows.Forms.Button();
             this.grbSelectAnExample = new System.Windows.Forms.GroupBox();
-            this.rdbAdvancedProgrammingExtra = new System.Windows.Forms.RadioButton();
+            this.rdbAdvancedProgrammingExtras1 = new System.Windows.Forms.RadioButton();
             this.rdbProgrammingExtras4 = new System.Windows.Forms.RadioButton();
             this.rdbProgrammingExtras3 = new System.Windows.Forms.RadioButton();
             this.rdbProgrammingExtras2 = new System.Windows.Forms.RadioButton();
@@ -42,12 +42,13 @@
             this.rdbVariables2 = new System.Windows.Forms.RadioButton();
             this.rdbVariables1 = new System.Windows.Forms.RadioButton();
             this.rdbIntroToProgramming = new System.Windows.Forms.RadioButton();
+            this.rdbAdvancedProgrammingExtras2 = new System.Windows.Forms.RadioButton();
             this.grbSelectAnExample.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(12, 340);
+            this.btnRun.Location = new System.Drawing.Point(12, 353);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(278, 43);
             this.btnRun.TabIndex = 0;
@@ -57,7 +58,8 @@
             // 
             // grbSelectAnExample
             // 
-            this.grbSelectAnExample.Controls.Add(this.rdbAdvancedProgrammingExtra);
+            this.grbSelectAnExample.Controls.Add(this.rdbAdvancedProgrammingExtras2);
+            this.grbSelectAnExample.Controls.Add(this.rdbAdvancedProgrammingExtras1);
             this.grbSelectAnExample.Controls.Add(this.rdbProgrammingExtras4);
             this.grbSelectAnExample.Controls.Add(this.rdbProgrammingExtras3);
             this.grbSelectAnExample.Controls.Add(this.rdbProgrammingExtras2);
@@ -71,21 +73,21 @@
             this.grbSelectAnExample.Controls.Add(this.rdbIntroToProgramming);
             this.grbSelectAnExample.Location = new System.Drawing.Point(12, 12);
             this.grbSelectAnExample.Name = "grbSelectAnExample";
-            this.grbSelectAnExample.Size = new System.Drawing.Size(278, 322);
+            this.grbSelectAnExample.Size = new System.Drawing.Size(278, 335);
             this.grbSelectAnExample.TabIndex = 10;
             this.grbSelectAnExample.TabStop = false;
             this.grbSelectAnExample.Text = "Please select an in-class example below to run:";
             // 
-            // rdbAdvancedProgrammingExtra
+            // rdbAdvancedProgrammingExtras1
             // 
-            this.rdbAdvancedProgrammingExtra.AutoSize = true;
-            this.rdbAdvancedProgrammingExtra.Location = new System.Drawing.Point(6, 284);
-            this.rdbAdvancedProgrammingExtra.Name = "rdbAdvancedProgrammingExtra";
-            this.rdbAdvancedProgrammingExtra.Size = new System.Drawing.Size(213, 17);
-            this.rdbAdvancedProgrammingExtra.TabIndex = 21;
-            this.rdbAdvancedProgrammingExtra.TabStop = true;
-            this.rdbAdvancedProgrammingExtra.Text = "Advanced Programming Extras Example";
-            this.rdbAdvancedProgrammingExtra.UseVisualStyleBackColor = true;
+            this.rdbAdvancedProgrammingExtras1.AutoSize = true;
+            this.rdbAdvancedProgrammingExtras1.Location = new System.Drawing.Point(6, 284);
+            this.rdbAdvancedProgrammingExtras1.Name = "rdbAdvancedProgrammingExtras1";
+            this.rdbAdvancedProgrammingExtras1.Size = new System.Drawing.Size(222, 17);
+            this.rdbAdvancedProgrammingExtras1.TabIndex = 21;
+            this.rdbAdvancedProgrammingExtras1.TabStop = true;
+            this.rdbAdvancedProgrammingExtras1.Text = "Advanced Programming Extras Example 1";
+            this.rdbAdvancedProgrammingExtras1.UseVisualStyleBackColor = true;            
             // 
             // rdbProgrammingExtras4
             // 
@@ -208,11 +210,22 @@
             this.rdbIntroToProgramming.Text = "Introduction To Programming";
             this.rdbIntroToProgramming.UseVisualStyleBackColor = true;
             // 
+            // rdbAdvancedProgrammingExtras2
+            // 
+            this.rdbAdvancedProgrammingExtras2.AutoSize = true;
+            this.rdbAdvancedProgrammingExtras2.Location = new System.Drawing.Point(6, 307);
+            this.rdbAdvancedProgrammingExtras2.Name = "rdbAdvancedProgrammingExtras2";
+            this.rdbAdvancedProgrammingExtras2.Size = new System.Drawing.Size(222, 17);
+            this.rdbAdvancedProgrammingExtras2.TabIndex = 22;
+            this.rdbAdvancedProgrammingExtras2.TabStop = true;
+            this.rdbAdvancedProgrammingExtras2.Text = "Advanced Programming Extras Example 2";
+            this.rdbAdvancedProgrammingExtras2.UseVisualStyleBackColor = true;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 394);
+            this.ClientSize = new System.Drawing.Size(306, 406);
             this.Controls.Add(this.grbSelectAnExample);
             this.Controls.Add(this.btnRun);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -230,7 +243,7 @@
 
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.GroupBox grbSelectAnExample;
-        private System.Windows.Forms.RadioButton rdbAdvancedProgrammingExtra;
+        private System.Windows.Forms.RadioButton rdbAdvancedProgrammingExtras1;
         private System.Windows.Forms.RadioButton rdbProgrammingExtras4;
         private System.Windows.Forms.RadioButton rdbProgrammingExtras3;
         private System.Windows.Forms.RadioButton rdbProgrammingExtras2;
@@ -242,6 +255,7 @@
         private System.Windows.Forms.RadioButton rdbVariables2;
         private System.Windows.Forms.RadioButton rdbVariables1;
         private System.Windows.Forms.RadioButton rdbIntroToProgramming;
+        private System.Windows.Forms.RadioButton rdbAdvancedProgrammingExtras2;
     }
 }
 

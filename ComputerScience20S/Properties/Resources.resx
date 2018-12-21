@@ -118,29 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1_5Dfdk1Y_lrlzng7pECGglg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_5Dfdk1Y_lrlzng7pECGglg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="beginning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beginning.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="BlinkyClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BlinkyClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BlinkyOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BlinkyOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chomp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chomp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pacmanLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacmanLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClydeClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClydeClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1_5Dfdk1Y_lrlzng7pECGglg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_5Dfdk1Y_lrlzng7pECGglg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClydeOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClydeOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PinkyClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinkyClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InkyClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InkyClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,31 +136,73 @@
   <data name="InkyOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InkyOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pacmanDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pacmanLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pacmanLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pacmanResting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pacmanResting.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pacmanRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pacmanRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BlinkyClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlinkyClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pacmanUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pacmanUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Pac_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pac-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ClydeOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClydeOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beginning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beginning.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heroBullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heroBullet.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pac_man1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pac-man1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PinkyClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PinkyClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pacmanUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacmanUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planetExplosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\planetExplosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="spaceMonster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spaceMonster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="planet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\planet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pac_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pac-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spaceship" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spaceship.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyBullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyBullet.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyExplosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyExplosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PinkyOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PinkyOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chomp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chomp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ClydeClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClydeClosed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacmanDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacmanDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pacmanRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pacmanRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyBulletSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyBulletSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heroBulletSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heroBulletSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
