@@ -36,7 +36,7 @@ namespace ComputerScience20S
             else if (rdbProgrammingExtras2.Checked)       new frmProgrammingExtras2().Show();
             else if (rdbProgrammingExtras3.Checked)       new frmProgrammingExtras3().Show();
             else if (rdbProgrammingExtras4.Checked)       new frmProgrammingExtras4().Show();
-            else if (rdbAdvancedProgrammingExtra.Checked) new frmAdvancedProgrammingExtra().Show();
+            else if (rdbAdvancedProgrammingExtra.Checked) new frmAdvancedProgrammingExtras1().Show();
             else
             {
                 MessageBox.Show( 

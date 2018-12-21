@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace ComputerScience20S
 {
-    public partial class frmAdvancedProgrammingExtra : Form
+    public partial class frmAdvancedProgrammingExtras1 : Form
     {
 
         // global "arrays" of picture boxes for the ghosts, walls, and dots
@@ -32,7 +32,7 @@ namespace ComputerScience20S
         // sound playing object
         SoundPlayer player;
 
-        public frmAdvancedProgrammingExtra()
+        public frmAdvancedProgrammingExtras1()
         {
             InitializeComponent();
         }

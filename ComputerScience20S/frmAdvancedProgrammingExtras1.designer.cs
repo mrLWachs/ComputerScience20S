@@ -1,6 +1,6 @@
 ﻿namespace ComputerScience20S
 {
-    partial class frmAdvancedProgrammingExtra
+    partial class frmAdvancedProgrammingExtras1
     {
         /// <summary>
         /// Required designer variable.
