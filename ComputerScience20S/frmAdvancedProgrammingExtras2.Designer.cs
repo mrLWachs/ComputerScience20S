@@ -256,7 +256,7 @@
             // picEnemyBullet5
             // 
             this.picEnemyBullet5.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet5.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet5.Image")));
+            this.picEnemyBullet5.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet5.Location = new System.Drawing.Point(988, 170);
             this.picEnemyBullet5.Name = "picEnemyBullet5";
             this.picEnemyBullet5.Size = new System.Drawing.Size(37, 47);
@@ -268,7 +268,7 @@
             // picEnemyBullet4
             // 
             this.picEnemyBullet4.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet4.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet4.Image")));
+            this.picEnemyBullet4.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet4.Location = new System.Drawing.Point(816, 170);
             this.picEnemyBullet4.Name = "picEnemyBullet4";
             this.picEnemyBullet4.Size = new System.Drawing.Size(37, 47);
@@ -280,7 +280,7 @@
             // picEnemyBullet3
             // 
             this.picEnemyBullet3.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet3.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet3.Image")));
+            this.picEnemyBullet3.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet3.Location = new System.Drawing.Point(641, 170);
             this.picEnemyBullet3.Name = "picEnemyBullet3";
             this.picEnemyBullet3.Size = new System.Drawing.Size(37, 47);
@@ -292,7 +292,7 @@
             // picEnemyBullet2
             // 
             this.picEnemyBullet2.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet2.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet2.Image")));
+            this.picEnemyBullet2.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet2.Location = new System.Drawing.Point(470, 170);
             this.picEnemyBullet2.Name = "picEnemyBullet2";
             this.picEnemyBullet2.Size = new System.Drawing.Size(37, 47);
@@ -304,7 +304,7 @@
             // picEnemyBullet1
             // 
             this.picEnemyBullet1.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet1.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet1.Image")));
+            this.picEnemyBullet1.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet1.Location = new System.Drawing.Point(294, 170);
             this.picEnemyBullet1.Name = "picEnemyBullet1";
             this.picEnemyBullet1.Size = new System.Drawing.Size(37, 47);
@@ -316,7 +316,7 @@
             // picEnemyBullet0
             // 
             this.picEnemyBullet0.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBullet0.Image = ((System.Drawing.Image)(resources.GetObject("picEnemyBullet0.Image")));
+            this.picEnemyBullet0.Image = global::ComputerScience20S.Properties.Resources.enemyBullet;
             this.picEnemyBullet0.Location = new System.Drawing.Point(122, 170);
             this.picEnemyBullet0.Name = "picEnemyBullet0";
             this.picEnemyBullet0.Size = new System.Drawing.Size(37, 47);

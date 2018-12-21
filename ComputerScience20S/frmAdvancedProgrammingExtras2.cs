@@ -41,6 +41,7 @@ namespace ComputerScience20S
 
         private void frmAdvancedProgrammingExtras2_Load(object sender, EventArgs e)
         {
+
             picHeroBullet.Visible = false;
             picEnemyBullet0.Visible = false;
             picEnemyBullet1.Visible = false;
