@@ -13,7 +13,8 @@ namespace ComputerScience20S
     public partial class frmConditionalStatementsExample1 : Form
     {
 
-        // global variables:
+        // Declare some global variables...
+        
         int sum = 0;
         int count = 0;
 
@@ -27,6 +28,7 @@ namespace ComputerScience20S
         {
             // remember what's in the textbox
             string value = txtInput.Text;
+            
             // make a decision
             if (value == "")
             {
