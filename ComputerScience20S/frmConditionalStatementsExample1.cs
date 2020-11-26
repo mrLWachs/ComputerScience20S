@@ -26,36 +26,29 @@ namespace ComputerScience20S
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            // First, read the text from the textbox
-            // and "remember" that text in a variable
-            
+            // First, read the text from the textbox and "remember" that text in a variable            
             string value = txtInput.Text;
             
-            // Now, make a "decision" using a 
-            // "if" statement ....
+            // Now, make a "decision" using a "if" statement ....
 
-            // if statements use round brackets ( )
-            // they also use curley brackets { }
+            // if statements use round brackets ( ) they also use curley brackets { } and
             // they do NOT use a semicolon ";"
             
             if (value == "")
             {
-                // The code between { } brackets is 
-                // said to be in a "block"
+                // The code between { } brackets is said to be in a "block"
                 
                 MessageBox.Show("You need to enter something");
                 Application.Exit();
             }
             else
             {
-                // The "else" statement has its own
-                // block (and does not need a test)
+                // The "else" statement has its own block (and does not need a test)
                 
                 // Now convert the text into a number            
                 int number = Convert.ToInt32(value);
                 
-                // Add that number to our global 
-                // running sum using a line of code
+                // Add that number to our global running sum using a line of code
                 // we see to add onto itself                
                 sum = sum + number;
                 
@@ -70,10 +63,8 @@ namespace ComputerScience20S
         private void chkSeeSum_CheckedChanged(object sender, EventArgs e)
         {
         
-            // Make a decision if the checkbox is
-            // checked, make the label visible, 
-            // otherwise (else) make the label
-            // not visible (invisible)
+            // Make a decision if the checkbox is checked, make the label visible, 
+            // otherwise (else) make the label not visible (invisible)
             
             if (chkSeeSum.Checked == true)
             {
