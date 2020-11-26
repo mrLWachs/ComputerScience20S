@@ -26,27 +26,55 @@ namespace ComputerScience20S
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            // remember what's in the textbox
+            // First, read the text from the textbox
+            // and "remember" that text in a variable
+            
             string value = txtInput.Text;
             
-            // make a decision
+            // Now, make a "decision" using a 
+            // "if" statement ....
+
+            // if statements use round brackets ( )
+            // they also use curley brackets { }
+            // they do NOT use a semicolon ";"
+            
             if (value == "")
             {
-                // code between { } brackets is said to be in a "block"
+                // The code between { } brackets is 
+                // said to be in a "block"
+                
                 MessageBox.Show("You need to enter something");
                 Application.Exit();
             }
             else
             {
+                // The "else" statement has its own
+                // block (and does not need a test)
+                
+                // Now convert the text into a number            
                 int number = Convert.ToInt32(value);
+                
+                // Add that number to our global 
+                // running sum using a line of code
+                // we see to add onto itself                
                 sum = sum + number;
+                
+                // Also increase the global count by one                
                 count = count + 1;
+                
+                // Now display to the user
                 lblOutput.Text = "sum = " + sum;
             }            
         }
 
         private void chkSeeSum_CheckedChanged(object sender, EventArgs e)
         {
+        
+            // Make a decision if the checkbox is
+            // checked, make the label visible, 
+            // otherwise (else) make the label
+            // not visible (invisible)
+            
             if (chkSeeSum.Checked == true)
             {
                 lblOutput.Visible = true;
