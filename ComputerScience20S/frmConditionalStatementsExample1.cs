@@ -15,8 +15,8 @@ namespace ComputerScience20S
 
         // Declare some global variables...
         
-        int sum = 0;
-        int count = 0;
+        int sum = 0;        // adding a running total
+        int count = 0;      // counts how many
 
 
         public frmConditionalStatementsExample1()
@@ -36,14 +36,15 @@ namespace ComputerScience20S
             
             if (value == "")
             {
-                // The code between { } brackets is said to be in a "block"
-                
                 MessageBox.Show("You need to enter something");
                 Application.Exit();
+                
+                // The code between { } brackets is said to be in a "block"
             }
             else
             {
-                // The "else" statement has its own block (and does not need a test)
+                // The "else" statement if written after the "{" bracket of 
+                // the "if" and has its own block (and does not need a test)
                 
                 // Now convert the text into a number            
                 int number = Convert.ToInt32(value);
