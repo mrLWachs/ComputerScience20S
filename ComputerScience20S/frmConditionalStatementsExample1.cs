@@ -26,7 +26,9 @@ namespace ComputerScience20S
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            // First, read the text from the textbox and "remember" that text in a variable            
+        
+            // First, read the text from the textbox and "remember" that text in a variable 
+            
             string value = txtInput.Text;
             
             // Now, make a "decision" using a "if" statement ....
@@ -36,28 +38,37 @@ namespace ComputerScience20S
             
             if (value == "")
             {
+            
                 MessageBox.Show("You need to enter something");
                 Application.Exit();
                 
                 // The code between { } brackets is said to be in a "block"
+                // blocks of code are indented
+                
             }
             else
             {
+            
                 // The "else" statement if written after the "{" bracket of 
                 // the "if" and has its own block (and does not need a test)
                 
-                // Now convert the text into a number            
+                // Now convert the text into a number   
+                
                 int number = Convert.ToInt32(value);
                 
                 // Add that number to our global running sum using a line of code
-                // we see to add onto itself                
+                // we often use to add onto itself  
+                
                 sum = sum + number;
                 
-                // Also increase the global count by one                
+                // Also increase the global count by one (similar line of code)     
+                
                 count = count + 1;
                 
                 // Now display to the user
+                
                 lblOutput.Text = "sum = " + sum;
+                
             }            
         }
 
