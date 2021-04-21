@@ -27,7 +27,7 @@ namespace ComputerScience20S
         // always under the words "public partial class"
         // and the opening "{" curly bracket. Global 
         // variables are "alive" for all code and remember
-        // their values for the entrie run of the program
+        // their values for the entire run of the program
 
         string value = "";
         int number = 0;
