@@ -54,7 +54,7 @@ namespace ComputerScience20S
             
             // The line above (a hard line to understand) means
             // it converts the text into a number (an integer)
-            // fromthe value variable I used on the other line
+            // from the value variable I used on the other line
             
             lblOutput.Text = "Number is " + number;
             
