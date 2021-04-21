@@ -30,6 +30,7 @@ namespace ComputerScience20S
         // their values for the entire run of the program
 
         string value = "";
+        
         int number = 0;
 
         const int DOUBLE = 2;   // This is a constant
