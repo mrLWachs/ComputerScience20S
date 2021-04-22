@@ -70,7 +70,7 @@ namespace ComputerScience20S
             // after the "//" characters is considered a comment
             // Comments can go on their own lines, or they can be
             // put after code at the end of the line
-            number = number * DOUBLE;
+            number = number * DOUBLE;       // Using the constant
             lblOutput.Text = "Double it = " + number;
         }
         
