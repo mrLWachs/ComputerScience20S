@@ -41,6 +41,39 @@ namespace ComputerScience20S
             InitializeComponent();
         }
         
+        private void btnAdd2_Click(object sender, EventArgs e)
+        {
+        
+            // This is a comment!
+            
+            number = number + 2;
+            
+            lblOutput.Text = "Add 2 = " + number;
+            
+            // You often see code where a variable "changes" itself
+            // like the line "number = number + 2;" where the variable
+            // adds on to itself
+            
+        }
+
+        private void btnAdd4_Click(object sender, EventArgs e)
+        {
+            // This is the code for the add 4 button
+            
+            number = number + 4;
+            lblOutput.Text = "Add 4 = " + number;
+        }
+
+        private void btnDoubleIt_Click(object sender, EventArgs e)
+        {
+            // This is the code for the double it button, all typing 
+            // after the "//" characters is considered a comment
+            // Comments can go on their own lines, or they can be
+            // put after code at the end of the line
+            number = number * DOUBLE;
+            lblOutput.Text = "Double it = " + number;
+        }
+        
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
             // This code runs every time the textbox changes
@@ -63,31 +96,6 @@ namespace ComputerScience20S
             // quotes and puts all those words into the label
             
         }
-
-        private void btnAdd2_Click(object sender, EventArgs e)
-        {
-            // This is a comment!
-            
-            number = number + 2;            
-            lblOutput.Text = "Add 2 = " + number;
-        }
-
-        private void btnAdd4_Click(object sender, EventArgs e)
-        {
-            // This is the code for the add 4 button
-            
-            number = number + 4;
-            lblOutput.Text = "Add 4 = " + number;
-        }
-
-        private void btnDoubleIt_Click(object sender, EventArgs e)
-        {
-            // This is the code for the double it button, all typing 
-            // after the "//" characters is considered a comment
-            // Comments can go on their own lines, or they can be
-            // put after code at the end of the line
-            number = number * DOUBLE;
-            lblOutput.Text = "Double it = " + number;
-        }
+        
     }
 }
