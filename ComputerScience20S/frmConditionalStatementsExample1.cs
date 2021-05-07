@@ -25,22 +25,25 @@ namespace ComputerScience20S
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
-        {
-        
-            // First, read the text from the textbox and "remember" that text in a variable 
+        {        
+            // The user has clicked this Enter button...
+
+            // Read the text out of the textbox, and store it (remember it) in a variable
             
             string value = txtInput.Text;
             
-            // Now, make a "decision" using a "if" statement ....
-
-            // if statements use round brackets ( ) they also use curley brackets { } and
-            // they do NOT use a semicolon ";"
+            // Now make a "decision" (means we writing a "if" statement) which asks the 
+            // question: "did they leave the textbox empty?" and only react if they did...
+            
+            // NOTE: If statements do NOT use semicolons ";" but they DO use round 
+            // brackets "( )" AND curly brackets "{ }" they also INDENT the code
+            // between the two curly brackets
             
             if (value == "")
             {
             
                 MessageBox.Show("You need to enter something");
-                Application.Exit();
+                Application.Exit();                                 // Shut this down
                 
                 // The code between { } brackets is said to be in a "block"
                 // blocks of code are indented
