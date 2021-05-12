@@ -15,7 +15,7 @@ namespace ComputerScience20S
 
         // GLOBAL VARIABLES:
         // (created under the words "public partial class..." 
-        // AND after the opening curly bracket " { "
+        //  AND after the opening curly bracket " { ")
 
         int sum = 0;    // Used for adding up a running total
         int count = 0;  // Used to count how many
