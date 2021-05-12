@@ -13,10 +13,12 @@ namespace ComputerScience20S
     public partial class frmConditionalStatementsExample1 : Form
     {
 
-        // Declare some global variables...
-        
-        int sum = 0;        // adding a running total
-        int count = 0;      // counts how many
+        // GLOBAL VARIABLES:
+        // (created under the words "public partial class..." 
+        // AND after the opening curly bracket " { "
+
+        int sum = 0;    // Used for adding up a running total
+        int count = 0;  // Used to count how many
 
 
         public frmConditionalStatementsExample1()
@@ -29,6 +31,7 @@ namespace ComputerScience20S
             // The user has clicked this enter button...
 
             // Read the text out of the textbox, and store (remember it) in a variable
+            // (note: we have seen this code before in the last unit - variables)
 
             string value = txtInput.Text;
 
@@ -56,22 +59,22 @@ namespace ComputerScience20S
                 // The "else" statement if written after the "{" bracket of 
                 // the "if" and has its own block (and does not need a test)
                 
-                // Now convert the text into a number   
-                
+                // Now going to convert into a number (seen before in last unit)
+
                 int number = Convert.ToInt32(value);
-                
-                // Add that number to our global running sum using a line of code
-                // we often use to add onto itself  
-                
+
+                // Add that number to our global runnig sum, using a line of 
+                // code that programmers often use to add a variable onto itself
+
                 sum = sum + number;
-                
-                // Also increase the global count by one (similar line of code)     
-                
+
+                // Also increase the global count by one (similar line of code)
+
                 count = count + 1;
-                
-                // Now display to the user
-                
-                lblOutput.Text = "sum = " + sum;
+
+                // Now display this to the user (code we have seen before)
+
+                lblOutput.Text = "Sum = " + sum;
                 
             }            
         }
