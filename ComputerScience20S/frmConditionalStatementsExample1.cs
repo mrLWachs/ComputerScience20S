@@ -97,7 +97,15 @@ namespace ComputerScience20S
 
         private void btnCount_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You have entered " + count + " values");
+        
+            // Simple "if" to check (test) that at least one number
+            // has been entered...
+            
+            if (count >= 1)
+            {
+                MessageBox.Show("You have entered " + count + " values");
+            }
+            
         }
     }
 }
