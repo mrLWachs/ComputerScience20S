@@ -14,8 +14,10 @@ namespace ComputerScience20S
     {
 
         // GLOBAL VARIABLES:
-        // (created under the words "public partial class..." 
-        //  AND after the opening curly bracket " { ")
+        // =================
+        // Which are created under the words 
+        // "public partial class..." 
+        // AND after the opening curly bracket " { "
 
         int sum = 0;    // Used for adding up a running total
         int count = 0;  // Used to count how many
@@ -82,8 +84,9 @@ namespace ComputerScience20S
         private void chkSeeSum_CheckedChanged(object sender, EventArgs e)
         {
         
-            // Make a decision if the checkbox is checked, make the label visible, 
-            // otherwise (else) make the label not visible (invisible)
+            // Make a decision if the checkbox is checked (or not), if 
+            // is it then make the label visible, otherwise (else) make
+            // the label not visible (invisible)
             
             if (chkSeeSum.Checked == true)
             {
@@ -92,7 +95,8 @@ namespace ComputerScience20S
             else
             {
                 lblOutput.Visible = false;
-            }            
+            } 
+            
         }
 
         private void btnCount_Click(object sender, EventArgs e)
