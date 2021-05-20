@@ -12,13 +12,14 @@ namespace ComputerScience20S
 {
     public partial class frmConditionalStatementsExample2 : Form
     {
-        // global variables:
+        // Global Variables:
 
-        int guesses = 0;
-        int number1 = 0;
-        int number2 = 0;
-
-        // globals have to start as 0 or "" nothing
+        int number1 = 0;        // Remembers the first number
+        int number2 = 0;        // Remembers the second number
+        int guesses = 0;        // Remembers how many guesses the user has made
+        
+        // Global variables (or "globals") have to start as 0
+        // for integers and doubles or "" (nothing) for strings
 
 
         public frmConditionalStatementsExample2()
@@ -28,7 +29,13 @@ namespace ComputerScience20S
 
         private void frmExample2_Load(object sender, EventArgs e)
         {
-            // the "focus" means it "goes" to that thing
+            // This is the code that runs before the form appears, 
+            // you get to this code by double clicking the form
+            
+            // Welcome the user...
+            MessageBox.Show("Hi, time to guess...");
+        
+            // The "focus" means it "goes" to that thing
             txtFirst.Focus();
             
             // pick 2 random #s
