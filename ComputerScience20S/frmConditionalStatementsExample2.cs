@@ -33,12 +33,11 @@ namespace ComputerScience20S
             // appears, you get to it by double clicking the form
 
             // Welcome the user
-            
             MessageBox.Show("Hi, time to guess...");
 
             // Pick 2 random numbers and store them in our globals
-            // by first creating a random number generator
-            
+            // by first create a random number generator
+
             Random random = new Random();
 
             // Now use it (remember the second number is always one more)
@@ -47,21 +46,22 @@ namespace ComputerScience20S
             number2 = random.Next(1, 4);
 
             // Set the "focus" (means the program "goes" to that thing)
-            
-            txtFirst.Focus();          
+            txtFirst.Focus();
         }
 
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            // Retrieve the user guesses from the textboxes...
-            // This time we will do two things at once, get the textbox 
+            // Code for the Guess button...
+
+            // Retrieve the user's guesses from the textboxes
+            // This time we will do two things at once, get the textbox
             // text and convert the text into a number all in one line
-            
+
             int guess1 = Convert.ToInt32(txtFirst.Text);
             int guess2 = Convert.ToInt32(txtSecond.Text);
 
-            // Create True/False boolean variables to remember if we 
-            // guess each (these are also known as "flags")
+            // Create True/False boolean variables to remember if we
+            // guessed each (these also known as "flags")
 
             bool gotFirst = false;
             bool gotSecond = false;
@@ -70,7 +70,7 @@ namespace ComputerScience20S
 
             if (guess1 == number1)
             {
-                // User guessed it, flag it and tell user                
+                // User got it, flag it and tell user
                 gotFirst = true;
                 lblFirst.Text = "Correct!";
             }
@@ -95,11 +95,13 @@ namespace ComputerScience20S
 
             if (guess2 == number2)
             {
+                // User got it, flag it and tell user
                 gotSecond = true;
                 lblSecond.Text = "Correct!";
             }
             else if (guess2 < number2)
             {
+                // Give the user a hint
                 lblSecond.Text = "Too low";
             }
             else if (guess2 > number2)
@@ -107,36 +109,36 @@ namespace ComputerScience20S
                 lblSecond.Text = "Too high";
             }
 
-            // Check to see if we are done, using combined logic...
+            // Check to see if we are done (meaning we got both)
+            // using some combined logic
 
             if (gotFirst == true && gotSecond == true)
             {
-                // The symbols "&&" means "AND" logically 
-                // Meaning both things have to be true for the entire
-                // test to be true
+                // The symbol "&&" means "AND" logically
+                // Meaning BOTH things have to be true for the 
+                // entire test to be true
 
                 MessageBox.Show("You win!");
+                Application.Exit();
             }
             else if (gotFirst == true || gotSecond == true)
             {
-                //  The symbols "||" means "OR" logically
-                // Meaning either of the two things can be true for the 
+                // The symbols "||" means "OR" logically
+                // Meaning EITHER of the two things can be true for the 
                 // entire test to be true
 
                 MessageBox.Show("You got one!");
 
-                // Count this as a guess
+                // count this as a guess
                 guesses = guesses + 1;
             }
             else
             {
-                // Count this as a guess
                 guesses = guesses + 1;
             }
 
             // Display the guesses to the user...
-
-            lblNumber.Text = "Number of Guesses = " + guesses;
+            lblNumber.Text = "Number of guesses = " + guesses;
         }
     }
 }
