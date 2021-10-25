@@ -2,11 +2,13 @@
 // (starting with variables problem 3)
 
 
-// NAME:        John Smith
-// DATE:        October 16, 2017 at 9:30am
+// NAME:        Your Name
+// DATE:        Fall 2021
 // TEACHER:     Mr. Wachs
-// ASSIGNMENT:  Variables example
-// PURPOSE:     More examples of variables code
+// ASSIGNMENT:  Variables example 2
+// PURPOSE:     Here you can type what the assignment was (be brief)
+//              or tell me how the assignment went for you
+
 
 using System;
 using System.Collections.Generic;
@@ -35,66 +37,78 @@ namespace ComputerScience20S
 
         const int DOUBLE = 2;   // This is a constant
         
+        // Constants are 'variables' that do NOT change (in
+        // other words, the value stays 'constant'). They are
+        // created (declared) the same way as other variables,
+        // but use the word "const" at the front of the line to
+        // 'lock' the variable value. They also use a different
+        // style and write in ALL_CAPS (with a underscore if 
+        // you need to separate words)
+        
 
         public frmVariablesExample2()
         {
             InitializeComponent();
         }
         
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+            // This is how you make a comment, by typing "//" and
+            // then typing whatever you want. Comments are NOT
+            // code, so you don't have to worry about what you type.
+            // They are used to leave notes to yourself or other
+            // programmers (or teachers)
+            
+            // The code for the textbox, and it runs every time the
+            // textbox changes in some way by the user typing in
+            // the textbox
+
+            value = txtInput.Text;
+
+            // The line above reads the text out of the textbox
+            // and remembers it in the global variable "value"
+
+            number = Convert.ToInt32(value);
+
+            // The line above (a hard line to understand) means
+            // it converts the text into a number (an integer)
+            // from the value variable I used on the other line
+
+            lblOutput.Text = "Number is " + number;
+
+            // The line above takes the number variable and 
+            // attaches it (concatinates) to some words in
+            // quotes and puts all those words into the label
+
+        }
+
         private void btnAdd2_Click(object sender, EventArgs e)
         {
-        
-            // This is a comment!
-            
+            // This is the code for the adding 2 button, all typing
+            // after the "//" characters is considered a comment
+            // commments can go on their own lines, or they can
+            // be put after code at the end of the line
+
             number = number + 2;
-            
+
             lblOutput.Text = "Add 2 = " + number;
-            
+
             // You often see code where a variable "changes" itself
             // like the line "number = number + 2;" where the variable
             // adds on to itself
-            
         }
 
         private void btnAdd4_Click(object sender, EventArgs e)
         {
             // This is the code for the add 4 button
-            
             number = number + 4;
             lblOutput.Text = "Add 4 = " + number;
         }
 
         private void btnDoubleIt_Click(object sender, EventArgs e)
         {
-            // This is the code for the double it button, all typing 
-            // after the "//" characters is considered a comment
-            // Comments can go on their own lines, or they can be
-            // put after code at the end of the line
-            number = number * DOUBLE;       // Using the constant
+            number = number * DOUBLE;
             lblOutput.Text = "Double it = " + number;
-        }
-        
-        private void txtInput_TextChanged(object sender, EventArgs e)
-        {
-            // This code runs every time the textbox changes
-            
-            value = txtInput.Text;
-            
-            // The line above reads the text out of the textbox
-            // and remembers it in the global variable "value"
-            
-            number = Convert.ToInt32(value);
-            
-            // The line above (a hard line to understand) means
-            // it converts the text into a number (an integer)
-            // from the value variable I used on the other line
-            
-            lblOutput.Text = "Number is " + number;
-            
-            // The line above takes the number variable and 
-            // attaches it (concatinates) to some words in
-            // quotes and puts all those words into the label
-            
         }
         
     }
