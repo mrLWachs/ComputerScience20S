@@ -15,8 +15,7 @@ namespace ComputerScience20S
 
         // GLOBAL VARIABLES:
         // =================
-        // Which are created under the words 
-        // "public partial class..." 
+        // Which are created under the words "public partial class..." 
         // AND after the opening curly bracket " { "
 
         int sum = 0;    // Used for adding up a running total
@@ -58,14 +57,14 @@ namespace ComputerScience20S
             else
             {
             
-                // The "else" statement if written after the "{" bracket of 
+                // The "else" statement is written after the "{" bracket of 
                 // the "if" and has its own block (and does not need a test)
                 
                 // Now going to convert into a number (seen before in last unit)
 
                 int number = Convert.ToInt32(value);
 
-                // Add that number to our global runnig sum, using a line of 
+                // Add that number to our global running sum, using a line of 
                 // code that programmers often use to add a variable onto itself
 
                 sum = sum + number;
@@ -84,9 +83,9 @@ namespace ComputerScience20S
         private void chkSeeSum_CheckedChanged(object sender, EventArgs e)
         {
         
-            // Make a decision if the checkbox is checked (or not), if 
-            // is it then make the label visible, otherwise (else) make
-            // the label not visible (invisible)
+            // Make a decision if the checkbox is checked (or not),
+            // if it is checked then make the label visible, otherwise
+            // (else) make the label not visible (invisible)
             
             if (chkSeeSum.Checked == true)
             {
