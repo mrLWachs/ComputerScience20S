@@ -12,14 +12,15 @@ namespace ComputerScience20S
 {
     public partial class frmConditionalStatementsExample2 : Form
     {
-        // Global Variables:
+        // Global Variable Area:
+        // =====================
 
         int number1 = 0;        // Remembers the first number
         int number2 = 0;        // Remembers the second number
         int guesses = 0;        // Remembers how many guesses the user has made
         
-        // Global variables (or "globals") have to start as 0
-        // for integers and doubles or "" (nothing) for strings
+        // Global variables (or "globals") have to start at 0 (zero)
+        // for integer and doubles or "" (nothing) for strings
 
 
         public frmConditionalStatementsExample2()
@@ -29,18 +30,24 @@ namespace ComputerScience20S
 
         private void frmExample2_Load(object sender, EventArgs e)
         {
-            // This is the code that runs before the form 
-            // appears, you get to it by double clicking the form
+            // This is the code that runs before the form appears
+            // you get to this code by double clicking an empty
+            // spot on the form (I recommend the bottom right corner)
 
-            // Welcome the user
+            // Welcome the user:
+            
             MessageBox.Show("Hi, time to guess...");
 
-            // Pick 2 random numbers and store them in our globals
-            // by first create a random number generator
+            // Pick 2 random numbers and store them (remember them) in
+            // out globals but first we need to create a random number
+            // generator to do this...
 
+            // The following line creates a random number generator:
+            
             Random random = new Random();
 
-            // Now use it (remember the second number is always one more)
+            // Now use the generator...
+            // (remember the 2nd number is always one more)
 
             number1 = random.Next(1, 6);
             number2 = random.Next(1, 4);
