@@ -60,24 +60,29 @@ namespace ComputerScience20S
         {
             // Code for the Guess button...
 
-            // Retrieve the user's guesses from the textboxes
-            // This time we will do two things at once, get the textbox
-            // text and convert the text into a number all in one line
+            // Retrieve the user's guess from the two textboxes
+            // this means we get the "text" then convert it to
+            // a number (we have done this in the last unit) - 
+            // this time we will do it all at once in one line
 
             int guess1 = Convert.ToInt32(txtFirst.Text);
             int guess2 = Convert.ToInt32(txtSecond.Text);
 
-            // Create True/False boolean variables to remember if we
-            // guessed each (these also known as "flags")
+            // TIP: You can bring "autocomplete" (intellisense)
+            // back by pressing CTRL + SPACE
+
+            // Create True/False boolean variables to remember
+            // if we gussed each (these are known as "flags")
 
             bool gotFirst = false;
             bool gotSecond = false;
 
-            // Now we check the first number vs. the first guess...
+            // Now we check the first number vs. the first guess
+            // using a conditional (if) statement
 
             if (guess1 == number1)
             {
-                // User got it, flag it and tell user
+                // User got the first, flag it and tell the user
                 gotFirst = true;
                 lblFirst.Text = "Correct!";
             }
@@ -88,6 +93,7 @@ namespace ComputerScience20S
             }
             else if (guess1 > number1)
             {
+                // Give the user another hint
                 lblFirst.Text = "Too high";
             }
 
@@ -102,13 +108,11 @@ namespace ComputerScience20S
 
             if (guess2 == number2)
             {
-                // User got it, flag it and tell user
                 gotSecond = true;
                 lblSecond.Text = "Correct!";
             }
             else if (guess2 < number2)
             {
-                // Give the user a hint
                 lblSecond.Text = "Too low";
             }
             else if (guess2 > number2)
