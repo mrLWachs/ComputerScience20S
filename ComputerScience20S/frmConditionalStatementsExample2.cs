@@ -120,36 +120,36 @@ namespace ComputerScience20S
                 lblSecond.Text = "Too high";
             }
 
-            // Check to see if we are done (meaning we got both)
-            // using some combined logic
+            // Check to see if we are done (meaning we got both
+            // numbers) use some combined logic:
 
             if (gotFirst == true && gotSecond == true)
             {
-                // The symbol "&&" means "AND" logically
-                // Meaning BOTH things have to be true for the 
-                // entire test to be true
+                // The symbol "&&" means "and" logically
+                // Means BOTH things have to be true for
+                // the entire test to be true
 
                 MessageBox.Show("You win!");
-                Application.Exit();
             }
             else if (gotFirst == true || gotSecond == true)
             {
-                // The symbols "||" means "OR" logically
-                // Meaning EITHER of the two things can be true for the 
-                // entire test to be true
+                // The symbol "||" means "or" logically
+                // Means EITHER things have to be true for
+                // the entire test to be true
 
                 MessageBox.Show("You got one!");
-
-                // count this as a guess
-                guesses = guesses + 1;
             }
             else
             {
-                guesses = guesses + 1;
+                MessageBox.Show("Incorrect!");
             }
+
+            // Count this as a guess
+            guesses = guesses + 1;
 
             // Display the guesses to the user...
             lblNumber.Text = "Number of guesses = " + guesses;
+            
         }
     }
 }
