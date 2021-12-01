@@ -19,54 +19,75 @@ namespace ComputerScience20S
         
         private void frmLoopingExample1_Load(object sender, EventArgs e)
         {
-            // code to add to add some things into the combo box
+            
+            // Code to add things to the combo box
+
             cboValues.Items.Add("10");
             cboValues.Items.Add("100");
             cboValues.Items.Add("1000");
             cboValues.Items.Add("10000");
-            // also change the display text
+
+            // Also change the text inside (like a textbox)
+
             cboValues.Text = "0";
+
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            // clear out the list box (works on combo box)
+            
+            // Clear out the list box (same code works on combobox)
+
             lstNumbers.Items.Clear();
 
-            // random numbers...
+            // Make a random number generator
+
             Random random = new Random();
 
-            // needed variables
+            // Make variables (the comma is not recommended)
 
             int number = 0, guess = 0;
-            // could use comma, don't recommend
+
+            // Another variable which reads from the combobox (like we did with textboxes)
 
             string value = cboValues.Text.Trim();
-            // trim removes extras leading, or trailing spaces
+
+            // Trim removes extra spaces (at the beginning or the end)
 
             int max = Convert.ToInt32(value);
-            // converted the text to a number
 
-            int answer = random.Next(1, max + 1);
-            // generate the random number to guess for
+            // Converting the text (from the combobox) to a number
 
-            // loop
+            int answer = random.Next(1, max);
+
+            // Generating a random answer for the computer to guess
+
+            // The Loop code...
+
             while (number != answer)
             {
-                // count this as a guess
+
+                // Count a guess (using the optional shorthand)
+                
                 guess++;
-                // means guess = guess + 1
+                
+                // This shorthand means guess = guess + 1
 
-                number = random.Next(1, max + 1);
-                // make a guess at the answer
+                number = random.Next(1, max);
 
-                // show
+                // Making a guess for the number
+
+                // Display that guess in the listbox
+
                 lstNumbers.Items.Add("Guess " + guess + " = " + number);
+
             }
 
-            lblDisplay.Text = "It took " +
-                guess + " guesses to find the number " +
-                answer + " between 1 and " + max;
+            // Show the user the final results...
+
+            lblDisplay.Text = "It took me " + guess +
+                " guesses to find the number " + answer +
+                " between 1 and " + max;
 
         }
 
