@@ -119,7 +119,6 @@ namespace ComputerScience20S
 
                     // Now draw the outside (line) of the circle
                     surface.DrawEllipse(pen, x, y, size, size);
-
                 }
             }
         }
