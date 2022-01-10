@@ -25,10 +25,16 @@ namespace ComputerScience20S
 
         private void frmProgrammingExtras1Form3_Load(object sender, EventArgs e)
         {
-            string filename = "C:\\Windows\\WinSxS\\amd64_microsoft-windows-shell-sounds" + "" +
-                "_31bf3856ad364e35_10.0.16299.15_none_39fea82526ae0a51\\Windows Logoff Sound.wav";
+            // Create a path to a sound file the computer can play
+            string filename = "C:\\Windows\\Media\\Windows Exclamation.wav";
+            
+            // Create a sound player using purely code
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            
+            // Connect the player to the sound file
             player.SoundLocation = filename;
+            
+            // Make the player play the sound file
             player.Play();
         }
     }
