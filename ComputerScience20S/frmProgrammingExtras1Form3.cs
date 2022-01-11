@@ -19,21 +19,31 @@ namespace ComputerScience20S
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Close();
-            frmProgrammingExtras1Form1.endExample();
+            // This line shuts down all forms
+            Application.Exit();
         }
 
         private void frmProgrammingExtras1Form3_Load(object sender, EventArgs e)
         {
-            // Create a path to a sound file the computer can play
-            string filename = "C:\\Windows\\Media\\Windows Exclamation.wav";
-            
-            // Create a sound player using purely code
+            // Code when the form first appears...
+
+            // Play a sound using only code (no media player
+            // on the design)
+
+            // Create a sound file full name
+            string first  = "C:\\Windows\\Media\\";
+            string middle = "Windows Exclamation";
+            string last   = ".wav";
+
+            // Attach (concatinate) them together
+            string name = first + middle + last;
+
+            // Create a sound player using code
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            
+
             // Connect the player to the sound file
-            player.SoundLocation = filename;
-            
+            player.SoundLocation = name;
+
             // Make the player play the sound file
             player.Play();
         }
