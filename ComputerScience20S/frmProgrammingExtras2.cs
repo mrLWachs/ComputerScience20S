@@ -29,6 +29,9 @@ namespace ComputerScience20S
         const int MOVE_RIGHT = 4;
         const int STOPPED    = 0;
 
+        // Variables (to track movement and where things are)
+        // using geometry and cartesian plane (x,y)
+                
         // coordinates for pacman
         int pacmanTop    = 0;
         int pacmanBottom = 0;
