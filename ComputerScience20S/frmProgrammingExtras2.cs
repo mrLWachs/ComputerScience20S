@@ -156,8 +156,7 @@ namespace ComputerScience20S
             //     dot (collsion reaction - dot disappears), ghost
             //     (game over), wall (stop pacman at wall)
 
-            // check if pacman is touching the dot? (if so, make the dot disappear)
-            
+            // check if pacman is touching the dot? (if so, make the dot disappear)            
             if ((( pacmanLeft   >= dot1Left && pacmanLeft   <= dot1Right ) ||
                  ( pacmanRight  >= dot1Left && pacmanRight  <= dot1Right )) &&
                 (( pacmanTop    >= dot1Top  && pacmanTop    <= dot1Bottom) ||
@@ -206,38 +205,7 @@ namespace ComputerScience20S
 
         private void checkForCollisions()
         {
-            // dot collision:
-            if ((( pacmanLeft   >= dotLeft   && pacmanLeft   <= dotRight ) || 
-                 ( pacmanRight  >= dotLeft   && pacmanRight  <= dotRight )) &&
-                (( pacmanTop    >= dotTop    && pacmanTop    <= dotBottom ) ||
-                 ( pacmanBottom >= dotTop    && pacmanBottom <= dotBottom)))
-            {
-                picDot.Visible = false;
-            }
-            else if ((( dotLeft   >= pacmanLeft   && dotLeft   <= pacmanRight) ||
-                      ( dotRight  >= pacmanLeft   && dotRight  <= pacmanRight)) &&
-                     (( dotTop    >= pacmanTop    && dotTop    <= pacmanBottom) ||
-                      ( dotBottom >= pacmanTop && dotBottom <= pacmanBottom)))
-            {
-                picDot.Visible = false;
-            }
-
-            // ghost collision:
-            if (((pacmanLeft >= ghostLeft && pacmanLeft <= ghostRight) ||
-                 (pacmanRight >= ghostLeft && pacmanRight <= ghostRight)) &&
-                ((pacmanTop >= ghostTop && pacmanTop <= ghostBottom) ||
-                 (pacmanBottom >= ghostTop && pacmanBottom <= ghostBottom)))
-            {
-                this.Close();
-            }
-            else if (((ghostLeft >= pacmanLeft && ghostLeft <= pacmanRight) ||
-                      (ghostRight >= pacmanLeft && ghostRight <= pacmanRight)) &&
-                     ((ghostTop >= pacmanTop && ghostTop <= pacmanBottom) ||
-                      (ghostBottom >= pacmanTop && ghostBottom <= pacmanBottom)))
-            {
-                this.Close();
-            }
-
+            
             // wall collision
             bool hittingWall = false;
             if (((pacmanLeft >= wallLeft && pacmanLeft <= wallRight) ||
