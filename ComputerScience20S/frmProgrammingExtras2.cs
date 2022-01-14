@@ -191,6 +191,35 @@ namespace ComputerScience20S
             // check if pacman is touching the wall? (if so...
             // stop pacman: depends on which direction pacman is going)
 
+            // Create a boolean (flag) variable - assume Pacman is not touching
+            bool touchingWall = false;
+
+            // check if pacman is touching the wall? (if so, flag it)
+            if (((pacmanLeft >= wall1Left && pacmanLeft <= wall1Right) ||
+                 (pacmanRight >= wall1Left && pacmanRight <= wall1Right)) &&
+                ((pacmanTop >= wall1Top && pacmanTop <= wall1Bottom) ||
+                 (pacmanBottom >= wall1Top && pacmanBottom <= wall1Bottom)))
+            {
+                touchingWall = true;
+            }
+            else if (((wall1Left >= pacmanLeft && wall1Left <= pacmanRight) ||
+                      (wall1Right >= pacmanLeft && wall1Right <= pacmanRight)) &&
+                     ((wall1Top >= pacmanTop && wall1Top <= pacmanBottom) ||
+                      (wall1Bottom >= pacmanTop && wall1Bottom <= pacmanBottom)))
+            {
+                touchingWall = true;
+            }
+
+            // React to a collion with the wall if Pacman touched
+            if (touchingWall == true)
+            {
+                // Pacman's position will change depending on which direction
+                // pacman was moving
+                if      (pacmanDirection == MOVE_DOWN)  pacmanTop  = wall1Top    - pacmanHeight - 1;
+                else if (pacmanDirection == MOVE_UP)    pacmanTop  = wall1Bottom + 1;
+                else if (pacmanDirection == MOVE_LEFT)  pacmanLeft = wall1Right  + 1;
+                else if (pacmanDirection == MOVE_RIGHT) pacmanLeft = wall1Left   - pacmanWidth  - 1;
+            }
 
             // (4) Redraw pacman on the form in the new location
             //     from coordinates
@@ -199,54 +228,6 @@ namespace ComputerScience20S
             picPacman.Top = pacmanTop;
             
         }
-
-
-
-
-        private void checkForCollisions()
-        {
-            
-            // wall collision
-            bool hittingWall = false;
-            if (((pacmanLeft >= wallLeft && pacmanLeft <= wallRight) ||
-                 (pacmanRight >= wallLeft && pacmanRight <= wallRight)) &&
-                ((pacmanTop >= wallTop && pacmanTop <= wallBottom) ||
-                 (pacmanBottom >= wallTop && pacmanBottom <= wallBottom)))
-            {
-                hittingWall = true;
-            }
-            else if (((wallLeft >= pacmanLeft && wallLeft <= pacmanRight) ||
-                      (wallRight >= pacmanLeft && wallRight <= pacmanRight)) &&
-                     ((wallTop >= pacmanTop && wallTop <= pacmanBottom) ||
-                      (wallBottom >= pacmanTop && wallBottom <= pacmanBottom)))
-            {
-                hittingWall = true;
-            }
-
-            // wall reaction
-            if (hittingWall == true)
-            {
-                if (pacmanDirection == MOVE_DOWN)
-                {
-                    pacmanTop = wallTop - pacmanHeight - 1;
-                }
-                else if (pacmanDirection == MOVE_UP)
-                {
-                    pacmanTop = wallBottom + 1;
-                }
-                else if (pacmanDirection == MOVE_LEFT)
-                {
-                    pacmanLeft = wallRight + 1;
-                }
-                else if (pacmanDirection == MOVE_RIGHT)
-                {
-                    pacmanLeft = wallLeft - pacmanWidth - 1;
-                }
-                pacmanBottom = pacmanTop + pacmanHeight;
-                pacmanRight = pacmanLeft + pacmanWidth;
-            }
-        }
-        
         
     }
 }
