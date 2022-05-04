@@ -29,8 +29,12 @@ namespace ComputerScience20S
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            // Another way to close (exit) one form
+            // Another way to code an exit button, like:
+            // Application.Exit();
+            
             this.Close();
+            
+            // This line will exit the one form
         }
 
         private void frmExample_Load(object sender, EventArgs e)
@@ -73,6 +77,12 @@ namespace ComputerScience20S
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            // This button will ask the user what color to draw the circles
+            // (the color inside, filling the circle) use a "fancy" dialog
+            // box (like the MessageBox) then it will fill up the screen drawing
+            // as many circles as it can based on the size the user choose in the
+            // numeric up/down
+        
             // Show the user a color choosing dialog box
             cdbColor.ShowDialog();
 
@@ -107,6 +117,17 @@ namespace ComputerScience20S
             // Make a variable for the max number of circles we can 
             // draw going across ("X" axis)
             int maxX = width - size - SPACER;
+
+            // The "for" loop has three parts:
+                // what to START at
+                // what to STOP at
+                // what to CHANGE by
+            // Uses round and curley brackets (like the while loop)
+            // Uses two ";" semi-colons
+
+            // Visual Studio can help write a for loop by doing this:
+                // Type "for"
+                // Press the "TAB" key twice
 
             // Use the "for" loop to repeatitively draw circles
             for (int y = SPACER; y <= maxY; y = y + move)
