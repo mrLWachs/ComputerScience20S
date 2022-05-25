@@ -56,6 +56,15 @@ namespace ComputerScience20S
         
         int pacmanDirection = STOPPED;
 
+        // To complete the variables for the other three
+        // game objects (wall, dot, and ghost) it is easier to
+        // select the variable code for pacman (using mouse or
+        // holding shift and using arrow keys) and copying
+        // and pasting the code (CTRL + C for copy then 
+        // CTRL + V for paste) and then do a "find and 
+        // replace" by pressing CTRL + H and doing the correct
+        // settings (match case, not whole word, and in selection)
+        // and replacing all the instances in the selection
 
         // coordinates for dot1
         int dot1Top    = 0;
