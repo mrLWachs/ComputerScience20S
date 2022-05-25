@@ -13,61 +13,73 @@ namespace ComputerScience20S
     public partial class frmProgrammingExtras2 : Form
     {
 
-        // Area for global variables:
+        // Global variables section...
 
-        // constants...
+        // constants (so that any "numbers" have a better meaning in code)
 
-        const int KEY_END   = 27;     // Escape key
-        const int KEY_UP    = 38;     // Up key (or "W" would be 87)
-        const int KEY_DOWN  = 40;     // Down key (or "S" would be 83)
-        const int KEY_LEFT  = 37;     // Left key (or "A" would be 65)
-        const int KEY_RIGHT = 39;     // Right key (or "D" would be 68)
+        const int STOPPED = 0;
 
         const int MOVE_UP    = 1;
         const int MOVE_DOWN  = 2;
         const int MOVE_LEFT  = 3;
         const int MOVE_RIGHT = 4;
-        const int STOPPED    = 0;
 
-        const int MOVE_AMOUNT = 2;
+        // constants for the key pressed on the keyboard
+        // they are stored as numbers
+
+        const int KEY_END   = 27;     // Escape key
+        const int KEY_UP    = 38;     // Up arrow key    (or "W" would be 87)
+        const int KEY_DOWN  = 40;     // Down arrow key  (or "S" would be 83)
+        const int KEY_LEFT  = 37;     // Left arrow key  (or "A" would be 65)
+        const int KEY_RIGHT = 39;     // Right arrow key (or "D" would be 68)
 
         // Variables (to track movement and where things are)
-        // using geometry and cartesian plane (x,y)
+        // using geometry and cartesian plane (x,y) coordinates
 
-        // Variable to track movement
-        int pacmanDirection = STOPPED;
+        // coordinate variables for pacman
 
-        // coordinates for pacman
+        // Variables for each "edge" of the rectangle
+        
         int pacmanTop    = 0;
         int pacmanBottom = 0;
         int pacmanLeft   = 0;
         int pacmanRight  = 0;
+
+        // Variables to calculate the far "edges"
+        
         int pacmanWidth  = 0;
         int pacmanHeight = 0;
 
-        // coordinates for ghost1
-        int ghost1Top = 0;
-        int ghost1Bottom = 0;
-        int ghost1Left = 0;
-        int ghost1Right = 0;
-        int ghost1Width = 0;
-        int ghost1Height = 0;
+        // Also one more variable for pacman 
+        // to track the movement (potentially 
+        // could also be made for each ghost)
+        
+        int pacmanDirection = STOPPED;
 
-        // coordinates for wall1
-        int wall1Top = 0;
-        int wall1Bottom = 0;
-        int wall1Left = 0;
-        int wall1Right = 0;
-        int wall1Width = 0;
-        int wall1Height = 0;
 
         // coordinates for dot1
-        int dot1Top = 0;
+        int dot1Top    = 0;
         int dot1Bottom = 0;
-        int dot1Left = 0;
-        int dot1Right = 0;
-        int dot1Width = 0;
+        int dot1Left   = 0;
+        int dot1Right  = 0;
+        int dot1Width  = 0;
         int dot1Height = 0;
+
+        // coordinates for wall1
+        int wall1Top    = 0;
+        int wall1Bottom = 0;
+        int wall1Left   = 0;
+        int wall1Right  = 0;
+        int wall1Width  = 0;
+        int wall1Height = 0;
+
+        // coordinates for ghost1
+        int ghost1Top    = 0;
+        int ghost1Bottom = 0;
+        int ghost1Left   = 0;
+        int ghost1Right  = 0;
+        int ghost1Width  = 0;
+        int ghost1Height = 0;
         
 
         public frmProgrammingExtras2()
@@ -95,6 +107,10 @@ namespace ComputerScience20S
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // The timer that runs the game, creates a
+            // "game loop" that controls the game logic
+            // and updates the logic every 100 milliseconds
+            // or whichever interval you set...
         
             // The timer that runs the game
 
