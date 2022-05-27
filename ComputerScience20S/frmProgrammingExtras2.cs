@@ -17,13 +17,16 @@ namespace ComputerScience20S
 
         // First some constants (so that any "numbers" have a better meaning in code)
 
-        const int STOPPED = 0;
+        const int STOPPED = 0;          // For when the game first starts
 
         const int MOVE_UP    = 1;
         const int MOVE_DOWN  = 2;
         const int MOVE_LEFT  = 3;
         const int MOVE_RIGHT = 4;
 
+        const int MOVE_AMOUNT = 5;      // How much a character moves in pixels
+        
+        
         // More constants for the key pressed on the keyboard they are stored
         // as numbers
 
