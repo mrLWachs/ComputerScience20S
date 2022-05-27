@@ -13,9 +13,9 @@ namespace ComputerScience20S
     public partial class frmProgrammingExtras2 : Form
     {
 
-        // Global variables section...
+        // Global variables area...................................................
 
-        // constants (so that any "numbers" have a better meaning in code)
+        // First some constants (so that any "numbers" have a better meaning in code)
 
         const int STOPPED = 0;
 
@@ -24,8 +24,8 @@ namespace ComputerScience20S
         const int MOVE_LEFT  = 3;
         const int MOVE_RIGHT = 4;
 
-        // constants for the key pressed on the keyboard
-        // they are stored as numbers
+        // More constants for the key pressed on the keyboard they are stored
+        // as numbers
 
         const int KEY_END   = 27;     // Escape key
         const int KEY_UP    = 38;     // Up arrow key    (or "W" would be 87)
@@ -33,12 +33,12 @@ namespace ComputerScience20S
         const int KEY_LEFT  = 37;     // Left arrow key  (or "A" would be 65)
         const int KEY_RIGHT = 39;     // Right arrow key (or "D" would be 68)
 
-        // Variables (to track movement and where things are)
-        // using geometry and cartesian plane (x,y) coordinates
+        // Variables (to track movement and where things are) using geometry 
+        // and the cartesian plane (x,y) coordinates
 
-        // coordinate variables for pacman
+        // Now some variables for pacman (for the coordinates)
 
-        // Variables for each "edge" of the rectangle
+        // Variables for each "edge" of the rectangle (or "hitbox" or "bounding" box)
         
         int pacmanTop    = 0;
         int pacmanBottom = 0;
@@ -50,21 +50,18 @@ namespace ComputerScience20S
         int pacmanWidth  = 0;
         int pacmanHeight = 0;
 
-        // Also one more variable for pacman 
-        // to track the movement (potentially 
+        // Also one more variable for pacman to track the movement (potentially 
         // could also be made for each ghost)
         
         int pacmanDirection = STOPPED;
 
-        // To complete the variables for the other three
-        // game objects (wall, dot, and ghost) it is easier to
-        // select the variable code for pacman (using mouse or
-        // holding shift and using arrow keys) and copying
-        // and pasting the code (CTRL + C for copy then 
-        // CTRL + V for paste) and then do a "find and 
-        // replace" by pressing CTRL + H and doing the correct
-        // settings (match case, not whole word, and in selection)
-        // and replacing all the instances in the selection
+        // To complete the variables for the other three game objects (wall,
+        // dot, and ghost) it is easier to select the variable code for 
+        // pacman (using mouse or holding shift and using arrow keys) and 
+        // copying and pasting the code (CTRL + C for copy then CTRL + V for 
+        // paste) and then do a "find and replace" by pressing CTRL + H and 
+        // doing the correct settings (match case, not whole word, and in 
+        // selection) and replacing all the instances in the selection
 
         // coordinates for dot1
         int dot1Top    = 0;
@@ -116,53 +113,63 @@ namespace ComputerScience20S
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // The timer that runs the game, creates a
-            // "game loop" that controls the game logic
-            // and updates the logic every 100 milliseconds
-            // or whichever interval you set...
-        
             // The timer that runs the game
 
-            // (1) Get the coordinates of all four things (objects) - which
-            //     are: Pacman, Wall 1, Dot 1, and Ghost 1 (where are they 
-            //     at this moment in time)
+            // Using an advanced concept from CS30S called: Methods (also 
+            // known as functions, procedures, actions) which use code to 
+            // outline the general idea of what needs to be done, and 
+            // use "()" round brackets
 
-            // Getting pacman's current location (coordinates)
+            getCoordinates();       // (1) Do this first
+            moveCoordinates();      // (2) Then this
+            collisionDetection();   // (3) Then this (and react to the collision)
+            redrawTheScreen();      // (4) Finally this
+            
+        }
+        
+        private void getCoordinates()
+        {
+            // We need to fill up all the global variables with the proper 
+            // values from where the objects currently are on the screen
+
+            // The top, left, width, and height come from the picturebox
             pacmanTop    = picPacman.Top;
             pacmanLeft   = picPacman.Left;
             pacmanWidth  = picPacman.Width;
             pacmanHeight = picPacman.Height;
-            // The other two coordinates, I calculate
-            pacmanBottom = pacmanTop  + pacmanHeight;
+
+            // The bottom and the right are calculated
             pacmanRight  = pacmanLeft + pacmanWidth;
+            pacmanBottom = pacmanTop  + pacmanHeight;
 
-            // Getting ghost's current location (coordinates)
-            ghost1Top = picGhost1.Top;
-            ghost1Left = picGhost1.Left;
-            ghost1Width = picGhost1.Width;
-            ghost1Height = picGhost1.Height;
-            // The other two coordinates, I calculate
-            ghost1Bottom = ghost1Top + ghost1Height;
-            ghost1Right = ghost1Left + ghost1Width;
-
-            // Getting dot's current location (coordinates)
-            dot1Top = picDot1.Top;
-            dot1Left = picDot1.Left;
-            dot1Width = picDot1.Width;
+            // The dot...
+            dot1Top    = picDot1.Top;
+            dot1Left   = picDot1.Left;
+            dot1Width  = picDot1.Width;
             dot1Height = picDot1.Height;
-            // The other two coordinates, I calculate
-            dot1Bottom = dot1Top + dot1Height;
-            dot1Right = dot1Left + dot1Width;
+            dot1Right  = dot1Left + dot1Width;
+            dot1Bottom = dot1Top  + dot1Height;
 
-            // Getting wall's current location (coordinates)
-            wall1Top = picWall1.Top;
-            wall1Left = picWall1.Left;
-            wall1Width = picWall1.Width;
+            // The wall...
+            wall1Top    = picWall1.Top;
+            wall1Left   = picWall1.Left;
+            wall1Width  = picWall1.Width;
             wall1Height = picWall1.Height;
-            // The other two coordinates, I calculate
-            wall1Bottom = wall1Top + wall1Height;
-            wall1Right = wall1Left + wall1Width;        
-                
+            wall1Right  = wall1Left + wall1Width;
+            wall1Bottom = wall1Top  + wall1Height;
+
+            // The ghost...
+            ghost1Top    = picGhost1.Top;
+            ghost1Left   = picGhost1.Left;
+            ghost1Width  = picGhost1.Width;
+            ghost1Height = picGhost1.Height;
+            ghost1Right  = ghost1Left + ghost1Width;
+            ghost1Bottom = ghost1Top  + ghost1Height;
+
+        }
+        
+        private void moveCoordinates()
+        {
             // (2) Move some of the coordinates (Pacman, potentially the
             //     ghost) - based on the direction the user set when the
             //     user preseed down a key (e.g. we move the pacman 
@@ -173,85 +180,106 @@ namespace ComputerScience20S
             else if (pacmanDirection == MOVE_LEFT)  pacmanLeft = pacmanLeft - MOVE_AMOUNT;
             else if (pacmanDirection == MOVE_RIGHT) pacmanLeft = pacmanLeft + MOVE_AMOUNT;
 
-            // The other two coordinates, I recalculate
-            pacmanBottom = pacmanTop  + pacmanHeight;
+            // Recalculate the other coordinates
             pacmanRight  = pacmanLeft + pacmanWidth;
-            
+            pacmanBottom = pacmanTop  + pacmanHeight;
+        }
+        
+        private void collisionDetection()
+        {
             // (3) Collision detection - is pacman "touching" with:
             //     dot (collsion reaction - dot disappears), ghost
             //     (game over), wall (stop pacman at wall)
 
-            // check if pacman is touching the dot? (if so, make the dot disappear)            
-            if ((( pacmanLeft   >= dot1Left && pacmanLeft   <= dot1Right ) ||
-                 ( pacmanRight  >= dot1Left && pacmanRight  <= dot1Right )) &&
-                (( pacmanTop    >= dot1Top  && pacmanTop    <= dot1Bottom) ||
-                 ( pacmanBottom >= dot1Top  && pacmanBottom <= dot1Bottom)))
+            // First, the simple way that is "built-in" to
+            // a picturebox object in C# - less versitile 
+            // (Meaning it won't transfer over to other 
+            // porgramming environments) - using the dot
+            // as an example (when pacman touches the dot
+            // the dot disappears)
+
+            // The collision detection...
+            if (picPacman.Bounds.IntersectsWith(picDot1.Bounds) == true)
             {
-                picDot1.Visible = false;
-            }
-            else if ((( dot1Left   >= pacmanLeft && dot1Left   <= pacmanRight ) ||
-                      ( dot1Right  >= pacmanLeft && dot1Right  <= pacmanRight )) &&
-                     (( dot1Top    >= pacmanTop  && dot1Top    <= pacmanBottom) ||
-                      ( dot1Bottom >= pacmanTop  && dot1Bottom <= pacmanBottom )))
-            {
-                picDot1.Visible = false;
+                picDot1.Visible = false;                // The collision reaction...
             }
 
-            // check if pacman is touching the ghost? (if so, end the game)
-            if (((pacmanLeft >= ghost1Left && pacmanLeft <= ghost1Right) ||
-                 (pacmanRight >= ghost1Left && pacmanRight <= ghost1Right)) &&
-                ((pacmanTop >= ghost1Top && pacmanTop <= ghost1Bottom) ||
-                 (pacmanBottom >= ghost1Top && pacmanBottom <= ghost1Bottom)))
+            // Second, the more versitile (transferable to any programming
+            // environment) way using our variables and math
+
+            // Check if pacman is touch the ghost...
+
+            // The collision detection...
+            if ( ( (pacmanLeft   >= ghost1Left && pacmanLeft   <= ghost1Right)   ||
+                   (pacmanRight  >= ghost1Left && pacmanRight  <= ghost1Right) ) &&
+                 ( (pacmanTop    >= ghost1Top  && pacmanTop    <= ghost1Bottom)  ||
+                   (pacmanBottom >= ghost1Top  && pacmanBottom <= ghost1Bottom) ) )
             {
+                // The collision reaction...
                 Application.Exit();
             }
-            else if (((ghost1Left >= pacmanLeft && ghost1Left <= pacmanRight) ||
-                      (ghost1Right >= pacmanLeft && ghost1Right <= pacmanRight)) &&
-                     ((ghost1Top >= pacmanTop && ghost1Top <= pacmanBottom) ||
-                      (ghost1Bottom >= pacmanTop && ghost1Bottom <= pacmanBottom)))
+            else if ( ( (ghost1Left   >= pacmanLeft && ghost1Left   <= pacmanRight)   ||
+                        (ghost1Right  >= pacmanLeft && ghost1Right  <= pacmanRight) ) &&
+                      ( (ghost1Top    >= pacmanTop  && ghost1Top    <= pacmanBottom)  ||
+                        (ghost1Bottom >= pacmanTop  && ghost1Bottom <= pacmanBottom) ) )
             {
+                // This is "two-way" collision detection, "seeing" if pacman touches
+                // the ghost, then is the ghost touching pacman (this is necessary
+                // when you have two rectangles of different sizes)
                 Application.Exit();
             }
 
-            // check if pacman is touching the wall? (if so...
-            // stop pacman: depends on which direction pacman is going)
 
-            // Create a boolean (flag) variable - assume Pacman is not touching
+            // Collsion detection for the wall
+
+            // Again using the more complicated collison detection, but I will use
+            // copy and paste (CTRL + C, CTRL + V) and find and replace (CTRL + H)
+            // to make my typing easier
+
+            // Before doing the collison detection, create a boolean variable (flag)
+            // start assuming pacman is not touching the wall
+
             bool touchingWall = false;
 
-            // check if pacman is touching the wall? (if so, flag it)
-            if (((pacmanLeft >= wall1Left && pacmanLeft <= wall1Right) ||
-                 (pacmanRight >= wall1Left && pacmanRight <= wall1Right)) &&
-                ((pacmanTop >= wall1Top && pacmanTop <= wall1Bottom) ||
-                 (pacmanBottom >= wall1Top && pacmanBottom <= wall1Bottom)))
+            // Collision detection...
+            if ( ( (pacmanLeft   >= wall1Left && pacmanLeft   <= wall1Right)   ||
+                   (pacmanRight  >= wall1Left && pacmanRight  <= wall1Right) ) &&
+                 ( (pacmanTop    >= wall1Top  && pacmanTop    <= wall1Bottom)  ||
+                   (pacmanBottom >= wall1Top  && pacmanBottom <= wall1Bottom) ) )
             {
                 touchingWall = true;
             }
-            else if (((wall1Left >= pacmanLeft && wall1Left <= pacmanRight) ||
-                      (wall1Right >= pacmanLeft && wall1Right <= pacmanRight)) &&
-                     ((wall1Top >= pacmanTop && wall1Top <= pacmanBottom) ||
-                      (wall1Bottom >= pacmanTop && wall1Bottom <= pacmanBottom)))
+            else if ( ( (wall1Left   >= pacmanLeft && wall1Left   <= pacmanRight)   ||
+                        (wall1Right  >= pacmanLeft && wall1Right  <= pacmanRight) ) &&
+                      ( (wall1Top    >= pacmanTop  && wall1Top    <= pacmanBottom)  ||
+                        (wall1Bottom >= pacmanTop  && wall1Bottom <= pacmanBottom) ) )
             {
                 touchingWall = true;
             }
 
-            // React to a collion with the wall if Pacman touched
+            // Collision reaction (to hitting a wall)
+
             if (touchingWall == true)
             {
-                // Pacman's position will change depending on which direction
-                // pacman was moving
-                if      (pacmanDirection == MOVE_DOWN)  pacmanTop  = wall1Top    - pacmanHeight - 1;
-                else if (pacmanDirection == MOVE_UP)    pacmanTop  = wall1Bottom + 1;
+                // Pacman's position (coordinates/variables) will change depending
+                // on which direction pacman was moving
+
+                // A nested if statement
+                if      (pacmanDirection == MOVE_UP)    pacmanTop  = wall1Bottom + 1;
+                else if (pacmanDirection == MOVE_DOWN)  pacmanTop  = wall1Top    - pacmanHeight - 1;
                 else if (pacmanDirection == MOVE_LEFT)  pacmanLeft = wall1Right  + 1;
                 else if (pacmanDirection == MOVE_RIGHT) pacmanLeft = wall1Left   - pacmanWidth  - 1;
             }
 
+        }
+        
+        private void redrawTheScreen()
+        {
             // (4) Redraw pacman on the form in the new location
             //     from coordinates
 
             picPacman.Left = pacmanLeft;
-            picPacman.Top = pacmanTop;
-            
+            picPacman.Top  = pacmanTop;
         }
         
     }
