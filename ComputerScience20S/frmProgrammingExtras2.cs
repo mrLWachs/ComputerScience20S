@@ -146,26 +146,26 @@ namespace ComputerScience20S
             pacmanBottom = pacmanTop  + pacmanHeight;
 
             // The dot...
-            dot1Top    = picDot1.Top;
-            dot1Left   = picDot1.Left;
-            dot1Width  = picDot1.Width;
-            dot1Height = picDot1.Height;
+            dot1Top    = picDot.Top;
+            dot1Left   = picDot.Left;
+            dot1Width  = picDot.Width;
+            dot1Height = picDot.Height;
             dot1Right  = dot1Left + dot1Width;
             dot1Bottom = dot1Top  + dot1Height;
 
             // The wall...
-            wall1Top    = picWall1.Top;
-            wall1Left   = picWall1.Left;
-            wall1Width  = picWall1.Width;
-            wall1Height = picWall1.Height;
+            wall1Top    = picWall.Top;
+            wall1Left   = picWall.Left;
+            wall1Width  = picWall.Width;
+            wall1Height = picWall.Height;
             wall1Right  = wall1Left + wall1Width;
             wall1Bottom = wall1Top  + wall1Height;
 
             // The ghost...
-            ghost1Top    = picGhost1.Top;
-            ghost1Left   = picGhost1.Left;
-            ghost1Width  = picGhost1.Width;
-            ghost1Height = picGhost1.Height;
+            ghost1Top    = picGhost.Top;
+            ghost1Left   = picGhost.Left;
+            ghost1Width  = picGhost.Width;
+            ghost1Height = picGhost.Height;
             ghost1Right  = ghost1Left + ghost1Width;
             ghost1Bottom = ghost1Top  + ghost1Height;
 
@@ -202,9 +202,9 @@ namespace ComputerScience20S
             // the dot disappears)
 
             // The collision detection...
-            if (picPacman.Bounds.IntersectsWith(picDot1.Bounds) == true)
+            if (picPacman.Bounds.IntersectsWith(picDot.Bounds) == true)
             {
-                picDot1.Visible = false;                // The collision reaction...
+                picDot.Visible = false;                // The collision reaction...
             }
 
             // Second, the more versitile (transferable to any programming
