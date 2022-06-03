@@ -63,7 +63,7 @@ namespace ComputerScience20S
             // Project -> Add Form
 
             // Creates a second form
-            Form2 form2 = new Form2();
+            frmProgrammingExtras1Form2 form2 = new frmProgrammingExtras1Form2();
 
             // show that form
             form2.Show();
