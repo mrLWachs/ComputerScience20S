@@ -1,14 +1,28 @@
-// This is the place you put a comment for every assignment 
-// (starting with variables problem 3)
+
+// This is a comment - you make comments by typing "//" and then
+// typing and everything after the two "//" is considered a
+// comment. Comments are NOT code, they appear in green, they
+// are used to leave notes to yourself or other programmers
+// (or teachers), and you can write what you want because the
+// computer ignores comments
+
+// I encourage you to add as many comments to your code as you
+// like (it will help you learn) you will never lose marks for
+// OVER commenting code
+
+// What is REQUIRED (for marks) in comments is the following
+// comment at the top of all programming solutions
+// (assignments) starting with variables assignment 3 and
+// ongoing...
 
 
-// NAME:        Your Name
-// DATE:        Fall 2021
-// TEACHER:     Mr. Wachs
-// ASSIGNMENT:  Variables example 2
-// PURPOSE:     Here you can type what the assignment was (be brief)
-//              or tell me how the assignment went for you
-
+// NAME:            Your name
+// DATE:            October 2022
+// TEACHER:         Mr. Wachs
+// ASSIGNMENT:      Variables Example 2
+// PURPOSE:         Here you can type what the assignment was
+//                  (be brief) and/or tell me how the assignment
+//                  went for you (like a journal) ~ 1 sentence
 
 using System;
 using System.Collections.Generic;
