@@ -102,18 +102,17 @@ namespace ComputerScience20S
 
         private void btnAdd2_Click(object sender, EventArgs e)
         {
-            // This is the code for the adding 2 button, all typing
-            // after the "//" characters is considered a comment
-            // commments can go on their own lines, or they can
-            // be put after code at the end of the line
+            
+            // This is the add 2 button...
 
             number = number + 2;
 
+            // You often see code where a variable "changes"
+            // itself like the line "number = number + 2;"
+            // where the variable adds on to itself
+
             lblOutput.Text = "Add 2 = " + number;
 
-            // You often see code where a variable "changes" itself
-            // like the line "number = number + 2;" where the variable
-            // adds on to itself
         }
 
         private void btnAdd4_Click(object sender, EventArgs e)
