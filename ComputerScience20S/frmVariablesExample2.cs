@@ -47,6 +47,10 @@ namespace ComputerScience20S
 
         string value = "";
         
+        // Global variables can NOT be assigned complicated
+        // values (like reading from a textbox) when created
+        // they can only be assigned simple values
+        
         int number = 0;
 
         const int DOUBLE = 2;   // This is a constant
