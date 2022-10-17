@@ -71,15 +71,10 @@ namespace ComputerScience20S
         
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            // This is how you make a comment, by typing "//" and
-            // then typing whatever you want. Comments are NOT
-            // code, so you don't have to worry about what you type.
-            // They are used to leave notes to yourself or other
-            // programmers (or teachers)
             
-            // The code for the textbox, and it runs every time the
-            // textbox changes in some way by the user typing in
-            // the textbox
+            // This is the code for the textbox, and it runs
+            // every time the textbox changes in some way when 
+            // the user types in the textbox
 
             value = txtInput.Text;
 
@@ -124,6 +119,8 @@ namespace ComputerScience20S
 
         private void btnDoubleIt_Click(object sender, EventArgs e)
         {
+            // Challenge (with frozen screen) is to make this 
+            // code work - with the constant...
             number = number * DOUBLE;
             lblOutput.Text = "Double it = " + number;
         }
