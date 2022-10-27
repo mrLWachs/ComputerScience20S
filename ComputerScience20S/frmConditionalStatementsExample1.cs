@@ -31,14 +31,16 @@ namespace ComputerScience20S
         {        
             // The user has clicked this enter button...
 
-            // Read the text out of the textbox, and store (remember it) in a variable
-            // (note: we have seen this code before in the last unit - variables)
+            // Read the text out of the textbox, and store (remember it) in a
+            // variable that we create (declare)
+            // NOTE: we have seen this code before (in the last unit- variables)
 
             string value = txtInput.Text;
 
-            // Now make a "decision" (means we write an "if" statement) which asks 
-            // the question: "Did the user leave the textbox empty?" and only 
-            // react if they did...
+            // Now make a "decision" (which means we write an "if" statement  
+            // or a conditional statement) which uses code to ask the question:
+            // "Did the user leave the textbox empty or not?"
+            // and only do something (execute code) if the answer is yes (true)
 
             // NOTE: if statements do NOT use semicolons ";" but they DO use 
             // round brackets "( )" AND curly brackets "{ }" they also INDENT 
@@ -50,9 +52,10 @@ namespace ComputerScience20S
                 MessageBox.Show("You need to enter something");
                 Application.Exit();     // Shuts everything down
 
-                // The code between { } brackets is said to be in a "block"
-                // blocks of code are indented
-
+                // The code between two "{ }" curly brackets is said to be in
+                // a "block" (like a button or a if statement) and that code
+                // is indented
+                
             }
             else
             {
