@@ -34,7 +34,7 @@ namespace ComputerScience20S
             // you get to this code by double clicking an empty
             // spot on the form (I recommend the bottom right corner)
 
-            // Welcome the user:
+            // Welcome our user...
             
             MessageBox.Show("Hi, time to guess...");
 
@@ -69,10 +69,10 @@ namespace ComputerScience20S
             int guess2 = Convert.ToInt32(txtSecond.Text);
 
             // TIP: You can bring "autocomplete" (intellisense)
-            // back by pressing CTRL + SPACE
+            // back at any time by pressing CTRL + SPACE
 
             // Create True/False boolean variables to remember
-            // if we gussed each (these are known as "flags")
+            // if we guessed each (these are also known as "flags")
 
             bool gotFirst = false;
             bool gotSecond = false;
