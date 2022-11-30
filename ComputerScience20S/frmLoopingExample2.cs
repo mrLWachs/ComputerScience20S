@@ -143,6 +143,8 @@ namespace ComputerScience20S
             // draw going across ("X" axis)
             int maxX = width - size - SPACER;
 
+            // NOW, the actual content of this uint, the "for" loop...            
+
             // The "for" loop has three parts:
                 // what to START at
                 // what to STOP at
