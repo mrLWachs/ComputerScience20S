@@ -13,15 +13,19 @@ namespace ComputerScience20S
     public partial class frmLoopingExample2 : Form
     {
 
-        // Global variables/constants:
+        // Global variables and constants...
+
         int width = 0;
         int height = 0;
 
-        // This acts as a 'gap' between the circles we will draw
-        // and any other things we are moving around
+        // This constant will act as a 'gap' between what we will be 
+        // using this program to do: drawing circles on the screen
+        // (and anything else drawn/moving on the screen) to fill up   
+        // the screen. This is measured in "pixels"
+
         const int SPACER = 5;
-
-
+        
+        
         public frmLoopingExample2()
         {
             InitializeComponent();
@@ -31,15 +35,25 @@ namespace ComputerScience20S
         {
             // Another way to code an exit button, like:
             // Application.Exit();
-            
+
             this.Close();
-            
-            // This line will exit the one form
+
+            // or even just "Close();"
+            // But that line will exit ("close") ONE form, and
+            // the "Application.Exit();" line closes everything!
         }
 
         private void frmExample_Load(object sender, EventArgs e)
         {        
-            // Set the form's background color
+            // When the form first loads up.... We can add code
+            // here to change the some of the same properties as 
+            // we do using the designer
+            
+            // REMINDER: to bring up autocomplete (any time)
+            // press "CTRL + SPACE" if you are having trouble  
+            // with some of the specifics of the coding
+            
+            // Set the form's background color to black
             this.BackColor = Color.Black;
 
             // Set the form to have no border
@@ -48,14 +62,21 @@ namespace ComputerScience20S
             // Set the form to be maximized (full screen)
             this.WindowState = FormWindowState.Maximized;
 
-            // Get (and remember in our global variables) the width and 
-            // height of the screen (the form now fills the screen) - the
-            // keyword "this" refers to "this form"
+            // Get ("retrieve") and remember (in our global variables)
+            // the width and height of "this" form (as now the form has 
+            // changed size to fill the screen). The keyword "this"
+            // refers to "this form"
+            
             width = this.Width;
             height = this.Height;
 
-            // Set the button over to the right of the screen width
-            // based on the values we just got in our global variables
+            // To move (position) objects (like a button, etc.)
+            // you can use the (x, y) coordinate system like in math
+            // (geometry) - another way in C# is like this...
+            
+            // Set the exit button over to the right of the screen
+            // (based on the global variable values)
+
             btnExit.Left = width - btnExit.Width - SPACER;
             btnExit.Top = 0 + SPACER;
 
@@ -63,14 +84,18 @@ namespace ComputerScience20S
             // "Top" is the same as "Y" coordinate
 
             // Move the run button to match up with the exit button
+            
             btnRun.Left = width - btnRun.Width - SPACER;
             btnRun.Top = btnExit.Top + btnExit.Height + SPACER;
 
             // Move the up down size selector to match up with the run button
+            
             nudSize.Left = width - nudSize.Width - SPACER;
             nudSize.Top = btnRun.Top + btnRun.Height + SPACER;
 
-            // Set the minimum and maximum of the circles radius we can draw
+            // Set the minimum and maximum of the size of the circles
+            // (the radius of the circles) to draw
+            
             nudSize.Minimum = SPACER;
             nudSize.Maximum = height - (SPACER * 2);            
         }
