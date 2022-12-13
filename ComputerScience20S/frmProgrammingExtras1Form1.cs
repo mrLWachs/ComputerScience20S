@@ -26,10 +26,10 @@ namespace ComputerScience20S
             // The timer runs like a loop, running this code
             // over and over again - while the Enabled property
             // is set to true. It runs based on time in milliseconds
-            // 1 second of real time = 1000 milliseconds
-            // 2 seconds of real time = 2000 milliseconds
-            // 10 seconds of real time = 10,000 milliseconds
-            // 1/2 second of real time = 500 milliseconds
+                // 1 second of real time = 1000 milliseconds
+                // 2 seconds of real time = 2000 milliseconds
+                // 10 seconds of real time = 10,000 milliseconds
+                // 1/2 second of real time = 500 milliseconds
 
             // Create a random number generator
             // and create random colors
@@ -49,23 +49,22 @@ namespace ComputerScience20S
 
         private void tmrChange_Tick(object sender, EventArgs e)
         {
-            // This timer waits 3 seconds and then
-            // runs this code...
+            // This timer waits for it's interval and then runs this code...
 
             // Shut off the other timer
-            tmrColors.Enabled = false;
+            tmrAnimate.Enabled = false;
 
-            // Hide our current form (make it "disappear")
+            // We "hide" our current form (make it dissappear)
             this.Hide();
 
             // Shift over to our second form
-            // to make another form, go to the menu:
-            // Project -> Add Form
+            // To make another form, go to the menu:
+                // Project -> Add Form
 
             // Creates a second form
             frmProgrammingExtras1Form2 form2 = new frmProgrammingExtras1Form2();
 
-            // show that form
+            // We "show" the other form (that we just created)
             form2.Show();
 
             // turn off this timer
