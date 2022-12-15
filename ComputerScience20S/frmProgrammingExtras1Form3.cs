@@ -27,8 +27,12 @@ namespace ComputerScience20S
         {
             // Code when the form first appears...
 
-            // Play a sound using only code (no media player
-            // on the design)
+            // How do files work? - they have each have 3 "names" ...
+                // 1 - "first"  name (for example "C:\Users\lawrence.wachs\Desktop") - or path, location
+                // 2 - "middle" name (for example "sound")
+                // 3 - "last"   name (for example ".wav") - or extension
+            
+            // Play a sound using only code (no media player on the design)
 
             // Create a sound file full name
             string first  = "C:\\Windows\\Media\\";
