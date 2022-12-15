@@ -19,21 +19,12 @@ namespace ComputerScience20S
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Code to play the sound file
+            // Code to play the sound file, we use the open 
+            // file dialog to have the user choose a file
 
-            // How do files work?
-
-            // File have 3 names...
-            // first name (for example "C:\Users\lawrence.wachs\Desktop") - or path, location
-            // middle name (for example "sound")
-            // last name (for example ".wav") - or extension
-
-            // Use the open file dialog to choose a file
-            // it will give us all three names
-
-            // fun option, only filter in 
-            // files that are "wav" files
-            openFileDialog1.Filter = "Sound Files|*.wav";
+            // A fun option, only filter in files that are
+            // are "mp3" files
+            openFileDialog1.Filter = "Sound Files|*.mp3";
 
             // Makes the dialog appear and choose a file
             openFileDialog1.ShowDialog();
