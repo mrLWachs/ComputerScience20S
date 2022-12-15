@@ -25,21 +25,22 @@ namespace ComputerScience20S
 
         private void frmProgrammingExtras1Form3_Load(object sender, EventArgs e)
         {
-            // Code when the form first appears...
+            // Code for when the form first appears...
+
+            // Play a good-bye sound using ONLY code and no media player
+            // on the design
 
             // How do files work? - they have each have 3 "names" ...
-                // 1 - "first"  name (for example "C:\Users\lawrence.wachs\Desktop") - or path, location
-                // 2 - "middle" name (for example "sound")
-                // 3 - "last"   name (for example ".wav") - or extension
-            
-            // Play a sound using only code (no media player on the design)
+                // 1: "first"  name - ex. "C:\Users\" (or path, directory, location)
+                // 2: "middle" name - ex. "sound"     (the user usually enters this)
+                // 3: "last"   name - ex. ".wav"      (or extension, file type)
 
             // Create a sound file full name
             string first  = "C:\\Windows\\Media\\";
             string middle = "Windows Exclamation";
             string last   = ".wav";
 
-            // Attach (concatinate) them together
+            // Attach (concatinate) the names together
             string name = first + middle + last;
 
             // Create a sound player using code
