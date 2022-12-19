@@ -183,6 +183,9 @@ namespace ComputerScience20S
             // using the dot as an example (when pacman touches the dot the dot disappears)
 
             // The collision detection...
+            // Using a "Rectangle" object built into C# that we ca retrieve from the two
+            // picturebox objects, then use a built in actio to see if those two rectangles
+            // are "intersecting" meaning "overlapping" or "touching" or "colliding"
             Rectangle pacmanHitbox = picPacman.Bounds;
             Rectangle dotHitBox    = picDot1.Bounds;
             if (pacmanHitbox.IntersectsWith(dotHitBox) == true)
