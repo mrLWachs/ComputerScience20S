@@ -183,7 +183,9 @@ namespace ComputerScience20S
             // using the dot as an example (when pacman touches the dot the dot disappears)
 
             // The collision detection...
-            if (picPacman.Bounds.IntersectsWith(picDot1.Bounds) == true)
+            Rectangle pacmanHitbox = picPacman.Bounds;
+            Rectangle dotHitBox    = picDot1.Bounds;
+            if (pacmanHitbox.IntersectsWith(dotHitBox) == true)
             {
                 picDot1.Visible = false;                // The collision reaction...
             }
