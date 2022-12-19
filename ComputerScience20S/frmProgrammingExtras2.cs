@@ -17,18 +17,7 @@ namespace ComputerScience20S
 
         // First some constants (so that any "numbers" have a better meaning in code)
 
-        const int STOPPED = 0;          // For when the game first starts
-
-        const int MOVE_UP    = 1;
-        const int MOVE_DOWN  = 2;
-        const int MOVE_LEFT  = 3;
-        const int MOVE_RIGHT = 4;
-
-        const int MOVE_AMOUNT = 5;      // How much a character moves in pixels
-        
-        
-        // More constants for the key pressed on the keyboard they are stored
-        // as numbers
+        // Constants for the key pressed on the keyboard they are stored as numbers
 
         const int KEY_END   = 27;     // Escape key
         const int KEY_UP    = 38;     // Up arrow key    (or "W" would be 87)
@@ -36,26 +25,32 @@ namespace ComputerScience20S
         const int KEY_LEFT  = 37;     // Left arrow key  (or "A" would be 65)
         const int KEY_RIGHT = 39;     // Right arrow key (or "D" would be 68)
 
-        // Variables (to track movement and where things are) using geometry 
-        // and the cartesian plane (x,y) coordinates
+        // Constants to "represent" the four movements of the game
 
-        // Now some variables for pacman (for the coordinates)
+        const int STOPPED    = 0;     // For when the game first starts
+        const int MOVE_UP    = 1;
+        const int MOVE_DOWN  = 2;
+        const int MOVE_LEFT  = 3;
+        const int MOVE_RIGHT = 4;
 
-        // Variables for each "edge" of the rectangle (or "hitbox" or "bounding" box)
-        
+        const int MOVE_AMOUNT = 5;      // How much a character moves in pixels
+
+        // Variables to remember the 4 "edges" of the rectangle
+        // (or "hitbox" or "bounding" box)
+
         int pacmanTop    = 0;
         int pacmanBottom = 0;
         int pacmanLeft   = 0;
         int pacmanRight  = 0;
 
         // Variables to calculate the far "edges"
-        
+
         int pacmanWidth  = 0;
         int pacmanHeight = 0;
 
         // Also one more variable for pacman to track the movement (potentially 
         // could also be made for each ghost)
-        
+
         int pacmanDirection = STOPPED;
 
         // To complete the variables for the other three game objects (wall,
