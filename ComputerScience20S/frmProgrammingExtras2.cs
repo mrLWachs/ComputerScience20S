@@ -99,11 +99,15 @@ namespace ComputerScience20S
             // click to get to this code... this code runs when the user
             // presses a key
 
-            if      (e.KeyValue == KEY_END)   Application.Exit();
-            else if (e.KeyValue == KEY_DOWN)  pacmanDirection = MOVE_DOWN;
-            else if (e.KeyValue == KEY_UP)    pacmanDirection = MOVE_UP;
-            else if (e.KeyValue == KEY_LEFT)  pacmanDirection = MOVE_LEFT;
-            else if (e.KeyValue == KEY_RIGHT) pacmanDirection = MOVE_RIGHT;
+            // Get a key value (an integer) and store in a variable
+            int key = e.KeyValue;
+
+            // Check what to do with that key code value
+            if      (key == KEY_END)   Application.Exit();
+            else if (key == KEY_UP)    pacmanDirection = MOVE_UP;
+            else if (key == KEY_DOWN)  pacmanDirection = MOVE_DOWN;
+            else if (key == KEY_LEFT)  pacmanDirection = MOVE_LEFT;
+            else if (key == KEY_RIGHT) pacmanDirection = MOVE_RIGHT;
 
             // Not using the curly brackets is an option! (no marks given
             // or taken away for not using them)
