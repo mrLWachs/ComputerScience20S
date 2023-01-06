@@ -52,7 +52,8 @@ namespace ComputerScience20S
             // logic/instructions/code, also known as a function,
             // action, procedure and it usually uses a 'verb')
 
-            // Use the array...
+            // Used the array and connect all the pictureboxes
+            // to locations (row, column) in the array (matrix)
 
             board[0, 0] = pic1;
             board[0, 1] = pic2;
