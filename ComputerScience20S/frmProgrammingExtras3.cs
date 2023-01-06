@@ -12,14 +12,17 @@ namespace ComputerScience20S
     public partial class frmProgrammingExtras3 : Form
     {
 
-        // Global variables/constants:
+        // Global Variables/Constants:
 
         const int REDS_TURN   = 1;
         const int BLACKS_TURN = 2;
 
         int turn = BLACKS_TURN;
 
-        // 2D array (matrix) of picture boxes
+        // Create an array (advanced way to remember data, or
+        // variables, also it is like a list, group, etc. and it
+        // generally uses a 'plural' word)
+
         PictureBox[,] board = new PictureBox[3,3];
 
 
@@ -30,33 +33,48 @@ namespace ComputerScience20S
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // put designer picture boxes into the global array
-            board[0, 0] = pictureBox1;
-            board[0, 1] = pictureBox2;
-            board[0, 2] = pictureBox3;
-            board[1, 0] = pictureBox4;
-            board[1, 1] = pictureBox5;
-            board[1, 2] = pictureBox6;
-            board[2, 0] = pictureBox7;
-            board[2, 1] = pictureBox8;
-            board[2, 2] = pictureBox9;
+            setupBoard();
+        }
+        
+        private void setupBoard()
+        {
+            // This is a method (advanced way to divide up the
+            // logic/instructions/code, also known as a function,
+            // action, procedure and it usually uses a 'verb')
 
-            // set colors
+            // Use the array...
+
+            board[0, 0] = pic1;
+            board[0, 1] = pic2;
+            board[0, 2] = pic3;
+            board[1, 0] = pic4;
+            board[1, 1] = pic5;
+            board[1, 2] = pic6;
+            board[2, 0] = pic7;
+            board[2, 1] = pic8;
+            board[2, 2] = pic9;
+
+            // Set up some colors...
+
             this.BackColor = Color.White;
-            
-            // nested for loops used to traverse 2D arrays
-            for (int r = 0; r < 3; r++)
+
+            // To use the array (matrix), use for loops
+            // (nested for loops to go through all the
+            // rows and columns)
+
+            for (int row = 0; row < 3; row++)
             {
-                for (int c = 0; c < 3; c++)
+                for (int column = 0; column < 3; column++)
                 {
-                    board[r, c].BackColor = Color.Yellow;
+                    board[row, column].BackColor = Color.Yellow;
                 }
             }
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // call the method
+            // use ("call") another method...
             clickOn(0,  0);
         }
 
@@ -100,9 +118,11 @@ namespace ComputerScience20S
             clickOn(2, 2);
         }
 
-        // this is a method, a new concept usually covered in the CS30S course
         private void clickOn(int row, int column)
         {
+            // rename the code above (called 
+            // parameters)
+
             if (turn == REDS_TURN)
             {
                 board[row, column].BackColor = Color.Red;
@@ -113,18 +133,32 @@ namespace ComputerScience20S
                 board[row, column].BackColor = Color.Black;
                 turn = REDS_TURN;
             }
+
             board[row, column].Enabled = false;
-            checkForWin();
+
+            checkForWins();
+
         }
 
-        // another method
-        private void checkForWin()
+        private void checkForWins()
         {
+            // Methods can "call" (execute, run, use) other
+            // methods
+
             bool gameOver = false;
+
+            // Now check for all the win scenarios...
+
             if (gameOver == false) gameOver = checkAcross();
             if (gameOver == false) gameOver = checkDown();
             if (gameOver == false) gameOver = checkDiagonals();
-            if (gameOver) this.Close();
+
+            // Only if the game is over...
+
+            if (gameOver == true)
+            {
+                Application.Exit();
+            }
         }
 
         private bool checkDiagonals()
