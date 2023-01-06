@@ -33,7 +33,17 @@ namespace ComputerScience20S
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Write a "verb" (action word) to signal to
+            // Visual Studio that we are going to make a 
+            // "Method" (aka function, procedure) - use two
+            // round brackets at the end (before the ";")
+
             setupBoard();
+
+            // Once the word is placed, a "lightbulb" may 
+            // appear - click on the lightbulb and then
+            // click on "Generate method..." to have Visual 
+            // Studio write the code for you  
         }
         
         private void setupBoard()
