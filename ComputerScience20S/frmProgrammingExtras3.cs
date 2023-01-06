@@ -52,8 +52,9 @@ namespace ComputerScience20S
             // logic/instructions/code, also known as a function,
             // action, procedure and it usually uses a 'verb')
 
-            // Used the array and connect all the pictureboxes
-            // to locations (row, column) in the array (matrix)
+            // Now we use the array and connect all the 
+            // pictureboxes to locations (row, column) in the 
+            // array (matrix)
 
             board[0, 0] = pic1;
             board[0, 1] = pic2;
@@ -69,9 +70,8 @@ namespace ComputerScience20S
 
             this.BackColor = Color.White;
 
-            // To use the array (matrix), use for loops
-            // (nested for loops to go through all the
-            // rows and columns)
+            // To use the array (matrix), use "for" loops (nested
+            // for loops to go through all the rows and columns)
 
             for (int row = 0; row < 3; row++)
             {
@@ -85,8 +85,12 @@ namespace ComputerScience20S
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // use ("call") another method...
+            // We use ("call") another method...
+            
             clickOn(0,  0);
+            
+            // And repeat this method call changing the numbers to 
+            // match up with each picturebox's location
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -131,9 +135,8 @@ namespace ComputerScience20S
 
         private void clickOn(int row, int column)
         {
-            // rename the code above (called 
-            // parameters)
-
+            // We rename the code above (called parameters)
+            
             if (turn == REDS_TURN)
             {
                 board[row, column].BackColor = Color.Red;
@@ -153,8 +156,7 @@ namespace ComputerScience20S
 
         private void checkForWins()
         {
-            // Methods can "call" (execute, run, use) other
-            // methods
+            // Methods can "call" (execute, run, use) other methods
 
             bool gameOver = false;
 
