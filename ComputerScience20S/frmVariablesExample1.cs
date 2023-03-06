@@ -19,15 +19,23 @@ namespace ComputerScience20S
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            string value = txtInput.Text;
-            int number1 = Convert.ToInt32(value);
+            
+            string value1 = txtInput1.Text;
+            int number1 = Convert.ToInt32(value1);
             int number2 = number1 + 10;
-            double number3 = Convert.ToDouble(value);
+            string answer1 = "Number plus ten is " + number2;
+            lblOutput1.Text = answer1;
+
+
+            string value2 = txtInput2.Text;
+            double number3 = Convert.ToDouble(value2);
             double number4 = number3 * 0.5;
+            string answer2 = "Half the number is " + number4;            
+            lblOutput2.Text = answer2;
+            
             int number5 = (int)number4;
             double number6 = (double)number5;
-            string answer = "Answer is " + number6;
-            lblOutput.Text = answer;
+            
         }
     }
 }
