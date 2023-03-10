@@ -1,7 +1,9 @@
 
-// This is a comment - you make comments by typing "//" and then
-// typing and everything after the two "//" is considered a
-// comment. Comments are NOT code, they appear in green, they
+// This is a comment
+
+// You can make comments in your programs by typing "//" and 
+// then typing and everything after the two "//" is considered
+// a comment. Comments are NOT code, they appear in green, they
 // are used to leave notes to yourself or other programmers
 // (or teachers), and you can write what you want because the
 // computer ignores comments
