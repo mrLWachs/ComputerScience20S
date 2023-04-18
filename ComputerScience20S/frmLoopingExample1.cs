@@ -20,14 +20,15 @@ namespace ComputerScience20S
         private void frmLoopingExample1_Load(object sender, EventArgs e)
         {
             
-            // Code to add things to the combo box
+            // Code to add things to the combo box...
 
             cboValues.Items.Add("10");
             cboValues.Items.Add("100");
             cboValues.Items.Add("1000");
             cboValues.Items.Add("10000");
 
-            // Also change the text inside (like a textbox)
+            // Also change the text inside
+            // (like a textbox)
 
             cboValues.Text = "0";
 
@@ -36,7 +37,8 @@ namespace ComputerScience20S
         private void btnFind_Click(object sender, EventArgs e)
         {
             
-            // Clear out the list box (same code works on combobox)
+            // Clear out the list box
+            // (same code works on combobox)
 
             lstNumbers.Items.Clear();
 
@@ -44,30 +46,36 @@ namespace ComputerScience20S
 
             Random random = new Random();
 
-            // Make variables (the comma is not recommended)
+            // Make some variables
+            // (the comma is not recommended)
 
             int number = 0, guess = 0;
 
-            // Another variable which reads from the combobox (like we did with textboxes)
+            // Another variable which reads from the combobox 
+            // (like we did with textboxes)
 
             string value = cboValues.Text.Trim();
 
-            // Trim removes extra spaces (at the beginning or the end)
+            // ".Trim()" removes any extra leading or trailing spaces
+            // (at the beginning or the end)
 
             int max = Convert.ToInt32(value);
 
-            // Converting the text (from the combobox) to a number
+            // Converting the text to a number
+            // (from the combobox)
 
             int answer = random.Next(1, max);
 
-            // Generating a random answer for the computer to guess
+            // Generating a random answer 
+            // (for the computer to guess)
 
             // The Loop code...
 
             while (number != answer)
             {
 
-                // Count a guess (using the optional shorthand)
+                // Count a guess 
+                // (using the optional shorthand)
                 
                 guess++;
                 
@@ -77,7 +85,8 @@ namespace ComputerScience20S
 
                 // Making a guess for the number
 
-                // Display that guess in the listbox
+                // Display that guess 
+                // (in the listbox)
 
                 lstNumbers.Items.Add("Guess " + guess + " = " + number);
 
