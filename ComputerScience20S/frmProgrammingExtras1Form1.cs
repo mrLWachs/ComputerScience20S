@@ -49,28 +49,31 @@ namespace ComputerScience20S
 
         private void tmrChange_Tick(object sender, EventArgs e)
         {
-            // This timer waits for it's interval and then runs this code...
+            // This timer waits for it's interval and then
+            // runs this code...
 
-            // Shut off the other timer
-            tmrAnimate.Enabled = false;
-
-            // We "hide" our current form (make it dissappear)
-            this.Hide();
-
-            // Shift over to our second form
-            // To make another form, go to the menu:
+            
+            // To add another form to a project, go to the menu:
                 // Project -> Add Form
+            
+            // Now to write the code to shift over to
+            // that new form, we first...
 
-            // Creates a second form
+            // Write code to "create" the second form
             frmProgrammingExtras1Form2 form2 = new frmProgrammingExtras1Form2();
 
             // We "show" the other form (that we just created)
             form2.Show();
-
-            // turn off this timer
-            tmrChange.Enabled = false;
             
+            // Then, we "hide" our current form (make it dissappear)
+            this.Hide();
+        
+            // And we also need to shut off the timer
+            // (so more forms are not created and shown)
+            tmrAnimate.Enabled = false;
         }
+        
+        
 
         public static void endExample()
         {
