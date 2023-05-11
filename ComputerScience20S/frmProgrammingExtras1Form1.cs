@@ -51,21 +51,17 @@ namespace ComputerScience20S
         {
             // This timer waits for it's interval and then
             // runs this code...
-
             
             // To add another form to a project, go to the menu:
                 // Project -> Add Form
             
-            // Now to write the code to shift over to
-            // that new form, we first...
-
-            // Write code to "create" the second form
+            // First, write code to "create" the second form
             frmProgrammingExtras1Form2 form2 = new frmProgrammingExtras1Form2();
 
-            // We "show" the other form (that we just created)
+            // Then we "show" the other form (that we just created)
             form2.Show();
             
-            // Then, we "hide" our current form (make it dissappear)
+            // Then we "hide" our current form (make it dissappear)
             this.Hide();
         
             // And we also need to shut off the timer
