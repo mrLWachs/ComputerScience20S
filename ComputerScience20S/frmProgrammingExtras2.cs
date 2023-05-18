@@ -12,62 +12,49 @@ namespace ComputerScience20S
 {
     public partial class frmProgrammingExtras2 : Form
     {
+        // Global variables area..............................................................
 
-        // Global variables area...................................................
+        // First some constants (so that any "numbers" have a better meaning in code).........
 
-        // First some constants (so that any "numbers" have a better meaning in code)
-
-        // Constants for the key pressed on the keyboard they are stored as numbers
-
-        const int KEY_END   = 27;     // Escape key
-        const int KEY_UP    = 38;     // Up arrow key    (or "W" would be 87)
-        const int KEY_DOWN  = 40;     // Down arrow key  (or "S" would be 83)
-        const int KEY_LEFT  = 37;     // Left arrow key  (or "A" would be 65)
-        const int KEY_RIGHT = 39;     // Right arrow key (or "D" would be 68)
-
-        // Constants to "represent" the four movements of the game
-
-        const int STOPPED    = 0;     // For when the game first starts
+        // Constants to "represent" the four movements of the game............................
+        const int STOPPED    = 0;                   // For when the game first starts
         const int MOVE_UP    = 1;
         const int MOVE_DOWN  = 2;
         const int MOVE_LEFT  = 3;
         const int MOVE_RIGHT = 4;
 
-        const int MOVE_AMOUNT = 5;      // How much a character moves in pixels
+        const int MOVE_AMOUNT = 5;                  // How much a character moves in pixels
 
-        // Variables to remember the 4 "edges" of the rectangle (or "hitbox" or "bounding" box)
+        // Constants for the key pressed on the keyboard they are stored as numbers...........
+        const int KEY_END   = 27;                   // Escape key
+        const int KEY_UP    = 38;                   // Up arrow key    (or "W" would be 87)
+        const int KEY_DOWN  = 40;                   // Down arrow key  (or "S" would be 83)
+        const int KEY_LEFT  = 37;                   // Left arrow key  (or "A" would be 65)
+        const int KEY_RIGHT = 39;                   // Right arrow key (or "D" would be 68)
 
+        // Variables remembers 4 "edges" of the rectangle (or "hitbox" or "bounding" box).....
         int pacmanTop    = 0;
         int pacmanBottom = 0;
         int pacmanLeft   = 0;
         int pacmanRight  = 0;
 
-        // Variables to calculate the far "edges"
-
+        // Variables to calculate the far "edges".............................................
         int pacmanWidth  = 0;
         int pacmanHeight = 0;
 
-        // Also one more variable for pacman to track the movement (potentially could also be
-        // made for each ghost)
+        // Also one more variable for pacman to track the movement
+        // (potentially could also be made for each ghost)....................................
 
         int pacmanDirection = STOPPED;
 
-        // To complete the variables for the other three game objects (wall, dot, and ghost) it
-        // is easier to select the variable code for pacman (using mouse or holding shift and
-        // using arrow keys) and copying and pasting the code (CTRL + C for copy then
-        // CTRL + V for paste) and then do a "find and replace" by pressing CTRL + H and doing
-        // the correct settings (match case, not whole word, and in selection) and replacing
-        // all the instances in the selection
+        // To complete the variables for the other three game objects (wall, dot, and ghost)
+        // it is easier to select the variable code for pacman (using mouse or holding shift
+        // and using arrow keys) and copying and pasting the code (CTRL + C for copy then
+        // CTRL + V for paste) and then do a "find and replace" by pressing CTRL + H and
+        // doing the correct settings (match case, not whole word, and in selection) and
+        // replacing all the instances in the selection.......................................
 
-        // Coordinates for dot1
-        int dot1Top    = 0;
-        int dot1Bottom = 0;
-        int dot1Left   = 0;
-        int dot1Right  = 0;
-        int dot1Width  = 0;
-        int dot1Height = 0;
-
-        // Coordinates for wall1
+        // Coordinates for wall 1.............................................................
         int wall1Top    = 0;
         int wall1Bottom = 0;
         int wall1Left   = 0;
@@ -75,7 +62,7 @@ namespace ComputerScience20S
         int wall1Width  = 0;
         int wall1Height = 0;
 
-        // Coordinates for ghost1
+        // Coordinates for ghost 1............................................................
         int ghost1Top    = 0;
         int ghost1Bottom = 0;
         int ghost1Left   = 0;
@@ -83,6 +70,15 @@ namespace ComputerScience20S
         int ghost1Width  = 0;
         int ghost1Height = 0;
 
+        // Coordinates for dot 1..............................................................
+        int dot1Top    = 0;
+        int dot1Bottom = 0;
+        int dot1Left   = 0;
+        int dot1Right  = 0;
+        int dot1Width  = 0;
+        int dot1Height = 0;
+        
+        
         public frmGame()
         {
             InitializeComponent();
