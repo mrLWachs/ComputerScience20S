@@ -88,12 +88,13 @@ namespace ComputerScience20S
         {
             // By going to the form, then the properties window, then clicking on the
             // "lightning bolt" at the top of the properties window, scroll down to "KeyDown"
-            // and double click to get to this code... this code runs when the user presses a key
+            // and double click to get to this code... this code runs when the user presses
+            // a key..........................................................................
 
-            // Get a key value (an integer) and store in a variable
+            // Get a key value (an integer) and store in a variable...........................
             int key = e.KeyValue;
 
-            // Check what to do with that key code value
+            // Check what to do with that key code value......................................
             if      (key == KEY_END)   Application.Exit();
             else if (key == KEY_UP)    pacmanDirection = MOVE_UP;
             else if (key == KEY_DOWN)  pacmanDirection = MOVE_DOWN;
@@ -101,7 +102,7 @@ namespace ComputerScience20S
             else if (key == KEY_RIGHT) pacmanDirection = MOVE_RIGHT;
 
             // Not using the curly brackets is an option! (no marks given or taken away for
-            // not using them)
+            // not using them)................................................................
         }
 
         private void tmrGame_Tick(object sender, EventArgs e)
