@@ -19,12 +19,19 @@ namespace ComputerScience20S
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+        
             lblHello.Text = "I've changed the world";
+            
             picSweaterVest.Visible = true;
+            
             btnChange.Enabled = false;
-            frmIntroductionToProgrammingExample.ActiveForm.WindowState = FormWindowState.Maximized;
+            
             lblHello.Font = new Font("Algerian", 30);
+            
             lblHello.Font = new Font(lblHello.Font, FontStyle.Underline);
+
+            frmIntroductionToProgrammingExample.ActiveForm.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }
