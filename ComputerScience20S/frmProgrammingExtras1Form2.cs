@@ -77,7 +77,7 @@ namespace ComputerScience20S
             // could still be running...
 
             // switch to my last form
-            frmProgrammingExtras1Form3 form3 = new frmProgrammingExtras1Form3();
+            Form3 form3 = new Form3();
             form3.Show();
         }
         
