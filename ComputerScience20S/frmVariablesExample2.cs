@@ -46,8 +46,6 @@ namespace ComputerScience20S
         // and the opening "{" curly bracket. Global 
         // variables are "alive" for all code and remember
         // their values for the entire run of the program
-
-        string value = "";
         
         // Global variables can NOT be assigned complicated
         // values (like reading from a textbox) when created
@@ -78,7 +76,7 @@ namespace ComputerScience20S
             // every time the textbox changes in some way when 
             // the user types in the textbox
 
-            value = txtInput.Text;
+            string value = txtInput.Text;
 
             // The line above reads the text out of the textbox
             // and remembers it in the global variable "value"
