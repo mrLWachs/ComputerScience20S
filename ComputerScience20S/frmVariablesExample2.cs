@@ -76,10 +76,10 @@ namespace ComputerScience20S
             // every time the textbox changes in some way when 
             // the user types in the textbox
 
-            string value = txtInput.Text;
+            string text = txtInput.Text;
 
             // The line above reads the text out of the textbox
-            // and remembers it in the global variable "value"
+            // and remembers it in the variable "text"
 
             number = Convert.ToInt32(value);
 
