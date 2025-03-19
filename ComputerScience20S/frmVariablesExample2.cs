@@ -81,7 +81,7 @@ namespace ComputerScience20S
             // The line above reads the text out of the textbox
             // and remembers it in the variable "text"
 
-            number = Convert.ToInt32(value);
+            number = Convert.ToInt32(text);
 
             // The line above (a hard line to understand) means
             // it converts the text into a number (an integer)
